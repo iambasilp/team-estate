@@ -4,7 +4,7 @@ Welcome to our MERN Real Estate App – a collaborative effort by our college te
 
 ## Team Members
 
-- [Basil Pulikuth](https://github.com/iambasilp)
+- [Basil](https://github.com/iambasilp)
 - [Nishaj](https://github.com/nishaj0)
 - [Anas](https://github.com/anaspxr)
 - [Shuhaib](https://github.com/suhaib-max)
