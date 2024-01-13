@@ -18,10 +18,6 @@ Our college project, the MERN Real Estate App, redefines the real estate browsin
 - **Interactive Property Listings:** Explore detailed real estate listings with high-quality images, descriptions, and dynamic filters for an immersive experience.
 - **User Authentication:** Securely manage user accounts with encrypted authentication, ensuring a personalized and private environment.
 
-## Project Showcase
-
-![MERN Real Estate App](./client/src/assets/Construction-default/comingsoon.jpg)
-
 ## Technologies Used
 
 - **Frontend:** React, Redux, HTML5, CSS3
@@ -48,4 +44,4 @@ Ensure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/mern-real-estate-app.git
+   git clone https://github.com/iambasilp/team-estate.git
