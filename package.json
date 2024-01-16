@@ -1,12 +1,13 @@
 {
-  "name": "mern-project",
+  "name": "mern-estate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon api/index.js",
-    "start": "node api/index.js"
+    "start": "node api/index.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
@@ -14,12 +15,10 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "firebase": "^10.7.1",
     "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.3.0",
-    "mongoose": "^8.0.4",
-    "nodemon": "^3.0.2",
-    "redux-persist": "^6.0.0"
+    "mongoose": "^7.5.0",
+    "nodemon": "^3.0.1"
   }
 }
