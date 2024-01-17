@@ -20,11 +20,11 @@ Our college project, the MERN Real Estate App, redefines the real estate browsin
 
 ## Technologies Used
 
-- **Frontend:** React, Redux, HTML5, CSS3
+- **Frontend:** React, Redux, Jsx, CSS3, Tailwind
 - **Backend:** Node.js, Express.js, MongoDB
 - **Authentication:** JSON Web Tokens (JWT)
-- **Styling:** Styled Components
-- **Deployment:** Heroku, Netlify
+- **Styling:** Tailwind Css
+- **Deployment:** Netlify
 
 ## Demo
 
