@@ -1,0 +1,342 @@
+[33mcommit a6e814ea3930c6b58cdb71f3b9bb737f2ddeb8a3[m[33m ([m[1;36mHEAD -> [m[1;32mbasil[m[33m)[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Thu Jan 18 08:52:20 2024 +0530
+
+    df
+
+[33mcommit a09a00cc255c544cfd183ecdd68d58d7f02d5ea4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 10:09:51 2024 +0530
+
+    fix app.jsx file for signup
+
+[33mcommit 11cd1740b19870718f3b973fd5fa3fbc5b608e8c[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 10:06:36 2024 +0530
+
+    add pre installation
+
+[33mcommit 6f5b72dabdcd33e879348c53f87b84125396cf01[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 10:03:49 2024 +0530
+
+    Complete about page
+
+[33mcommit e43c2c707c5fa5e0c7ada2d6381fc28d12c4566b[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 09:59:54 2024 +0530
+
+    Complete Home Page
+
+[33mcommit a581bae5286bc9c015fda8839d4dbab7603c4069[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 09:57:48 2024 +0530
+
+    add show more listings funtionality
+
+[33mcommit 874561c939ead3da269ffed7430464aa490a744b[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 09:55:34 2024 +0530
+
+    Create the listing item component and show listings
+
+[33mcommit f7b68252303b8ac228267582ffa514f0c193fcc0[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 09:11:33 2024 +0530
+
+    add onChange and onSubmit functionality to the search page
+
+[33mcommit 7f10de27e36d8741ba18275d83bda8a666839077[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 09:07:38 2024 +0530
+
+    Create search page UI
+
+[33mcommit ddb287e8596a62ec78781f92b61116d39e89d945[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 09:04:09 2024 +0530
+
+    complete header search form functionality
+
+[33mcommit e0c8a7a218bd2c271b19bf00430005ed9d054af1[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 09:02:46 2024 +0530
+
+    create search api route
+
+[33mcommit e0a9140a517b41ec85f1e9960d5aded10989b228[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 08:56:15 2024 +0530
+
+    some major fix it
+
+[33mcommit e925dbe61b2cc223015a954dc97298bd08cdbb4f[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 08:15:40 2024 +0530
+
+    Add contact landlord functionality to the listing page
+
+[33mcommit 558dda68e7cf93bc14e19a91f167283881946945[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 08:11:24 2024 +0530
+
+    complete listing page
+
+[33mcommit efb9cdf35d25d73714c5b8944dd28473b4c4df93[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 08:09:35 2024 +0530
+
+    add image slider to the listing page
+
+[33mcommit b3e6f2565ac7147f06551c1ef242eae441f77b91[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 08:04:49 2024 +0530
+
+    complete update listing functionality
+
+[33mcommit b2e478cd7d2c6400079ebd9e545f0e0821810576[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 08:01:35 2024 +0530
+
+    create update listing api route
+
+[33mcommit 6e879659a51933ca6dc4a7459123c7e43089beca[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 07:58:59 2024 +0530
+
+    complete delete user listing functionality
+
+[33mcommit 48e5d47e1042be8c83da4323460cd48a7f614451[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 07:55:47 2024 +0530
+
+    Complete show user listings functionality
+
+[33mcommit b36f0f0c035e6fb1fd63d54535633dc5cc9ec39e[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 07:50:51 2024 +0530
+
+    Create Get User Listings api route
+
+[33mcommit e42c0a916220c31ac81f0cfab225e89f0c49006f[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 07:47:18 2024 +0530
+
+    Complete Create Listing Page Functionality
+
+[33mcommit 982a9d8686887be806b065c0b899ee315fb822a5[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 07:44:25 2024 +0530
+
+    Complete Upload Listing Images Functionality
+
+[33mcommit 094416b31e49ef98730f5d963da68af5c956da75[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 07:39:17 2024 +0530
+
+    Complete Create Listing Page UI
+
+[33mcommit 5f16415960db3c0ff3a8bfe873ad02cf6f3f392d[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Tue Jan 16 07:33:08 2024 +0530
+
+    Add Create Listing Api Route
+
+[33mcommit f4e51b0bf4a55d9abadcdd31a16842cbbb452213[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Mon Jan 15 19:49:04 2024 +0530
+
+    Add Sign Out functionality
+
+[33mcommit 736242029ee9b6fc4ca3947a32e0ddd0604de37b[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Mon Jan 15 19:25:43 2024 +0530
+
+    Enhance and expand user functionality, including the addition of the delete user feature.
+
+[33mcommit de3a61b9daa530eb680493e63b64d9111b98bf6d[m
+Author: Basil Pulikuth <basilxg321@gmail.com>
+Date:   Mon Jan 15 19:09:49 2024 +0530
+
+    complete update user functionality
+
+[33mcommit fba534751926f307cd9345b8f3613a39bf223ead[m
+Author: Basil Pulikuth <73985514+iambasilp@users.noreply.github.com>
+Date:   Sat Jan 13 10:59:12 2024 +0530
+
+    Update readme.md
+
+[33mcommit 71cb33e465a499ff2a0e6b9236672d4be8c9e54f[m
+Author: Basil Pulikuth <73985514+iambasilp@users.noreply.github.com>
+Date:   Sat Jan 13 10:58:15 2024 +0530
+
+    Update README
+
+[33mcommit 995353abe1cdad81ec1bc6a927645c3474f6b54f[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Sat Jan 13 10:53:17 2024 +0530
+
+    Added README file
+
+[33mcommit 8d2330767aacdb78ef99bf48b5a82fc353f935ec[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Sat Jan 13 09:39:35 2024 +0530
+
+    update import path for User module and bcryptjs
+
+[33mcommit bc482fb3080d991c7301e7de370dfc5cd6df9175[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Fri Jan 12 12:18:47 2024 +0530
+
+    Updated header styling
+
+[33mcommit d7efb20044fb9fb9d02c2d58d6b81b1ffa886fb8[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Fri Jan 12 10:59:56 2024 +0530
+
+    Implement update user API route and add token verification middleware
+
+[33mcommit cd437174ed6682665d1da15ff3ce0edb495175c8[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Thu Jan 11 21:31:49 2024 +0530
+
+    Implement profile image upload feature and enhance profile page UI
+
+[33mcommit 28787f43f00f49d633775248b39bf181c68ff9af[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Thu Jan 11 21:25:05 2024 +0530
+
+    Refine and enhance Profile page UI with a clean design
+
+[33mcommit f8c88874bb3f952b9f23228fb8dbe51236bcd7da[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Thu Jan 11 21:19:00 2024 +0530
+
+    Enhance Header Design and Implement Private Profile Page Access
+
+[33mcommit 2160b81b09f7de9706ce8c1559d32ffaac0e6dc8[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Thu Jan 11 21:05:03 2024 +0530
+
+    Implement Google OAuth Integration
+
+[33mcommit 3854151260129da92b71e6e1097013c8cd48bed1[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 18:45:54 2024 +0530
+
+    Integrate Redux Persist for state persistence in Redux store
+
+[33mcommit cca6b7a1908f73987d58848c0b681cc527ee7b37[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 18:17:36 2024 +0530
+
+    Integrated Redux Toolkit for state management
+
+[33mcommit b229e0b751559ab6c3ce6d01f11de4fe4c12f6c8[m
+Merge: 50c6f26 fe80b71
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 17:50:39 2024 +0530
+
+    Merge branch 'main' of https://github.com/iambasilp/team-estate
+
+[33mcommit 50c6f26016bc894a707f76fa6e9c03c30b82c841[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 13:45:04 2024 +0530
+
+    some error fixexd
+
+[33mcommit fe80b71ae35562794478da9799246fd8eb1f8e53[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 13:45:04 2024 +0530
+
+    some error fixexd
+
+[33mcommit 4a1350c1f420b1f61bd518461913f44b6cbb2677[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 13:06:56 2024 +0530
+
+    Implement basic sign-in page functionality
+
+[33mcommit acc368eeb282a03505dc795d4e71f8e2fda8c103[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 12:49:56 2024 +0530
+
+    Add API route for user sign-in with authentication and error handling
+
+[33mcommit 1da1097b1aa51f297c704178ae38f26ddc788ca0[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 12:43:04 2024 +0530
+
+    Implement user sign-up functionality with form handling, validation, and error display
+
+[33mcommit 2195889ffeebed6fbecff63b085713205d3c5cb2[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 12:26:40 2024 +0530
+
+    Enhance SignUp page with improved design and styling
+
+[33mcommit 196844eabcb10b9bbddecc734ca631d39daa61bf[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 12:25:26 2024 +0530
+
+    Update header styling for a better look
+
+[33mcommit ce3f45906e80a60030c055d439418bda88ea808c[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 12:12:48 2024 +0530
+
+    Complete Sign-Up Page UI
+
+[33mcommit 05151493ffa28d45c5492fb6ecb715c7fd42a8e6[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 11:55:07 2024 +0530
+
+    Introduce middleware for user sign-up API with enhanced error handling
+
+[33mcommit 291563eb9ee0a03ace559d32a9cc121e92be34a5[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 11:46:10 2024 +0530
+
+    Implement user sign-up API route with bcrypt password hashing and user model integration.
+
+[33mcommit b754b4b6c63731397ac8c13c9c60faa2b8de5d2e[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 11:12:54 2024 +0530
+
+    Implement a sample API route for testing purposes
+
+[33mcommit 416a01f6560db8234de50d88d0d9337f347cd0ff[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 10:57:08 2024 +0530
+
+    Define user schema and model using Mongoose for username, email, and password fields
+
+[33mcommit d8c9c05ade96ba79e9f9b8aba7198334dbbc71ec[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 10:51:09 2024 +0530
+
+    Establish database connection in the application
+
+[33mcommit 24bf886021c81715fc3768ea59a21304a53d00a5[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 10:18:18 2024 +0530
+
+    Setup and launch the server
+
+[33mcommit 604cdef70434493eecc34c305fb8b5f191a3d37d[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 10:07:32 2024 +0530
+
+    Develop the header component
+
+[33mcommit af4033dea84658b0a7a42cca908807d22224f557[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 09:58:07 2024 +0530
+
+    Implement pages and routes in the project
+
+[33mcommit 3f006790c4438a35101cc0ae45fb4627e2602fbd[m
+Author: iambasilp <basilxg321@gmail.com>
+Date:   Wed Jan 10 09:51:48 2024 +0530
+
+    Setup React.js and Tailwind CSS, initializing the first template
