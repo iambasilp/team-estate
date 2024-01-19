@@ -18,6 +18,7 @@ import {
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 export default function Profile() {
   const fileRef = useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -96,6 +97,7 @@ export default function Profile() {
 
   const handleDeleteUser = async () => {
     try {
+      setShowDeleteConfirmation(false);
       dispatch(deleteUserStart());
       const res = await fetch(`/api/user/delete/${currentUser._id}`, {
         method: 'DELETE',
@@ -113,6 +115,7 @@ export default function Profile() {
 
   const handleSignOut = async () => {
     try {
+      setShowSignoutConfirmation(false);
       dispatch(signOutUserStart());
       const res = await fetch('/api/auth/signout');
       const data = await res.json();
@@ -159,6 +162,17 @@ export default function Profile() {
     } catch (error) {
       console.log(error.message);
     }
+  };
+
+  //confirmation message when sign out and delete account
+  const [showSignoutConfirmation, setShowSignoutConfirmation] = useState(false);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+  const handleDeleteUserConfirmation = () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const handleSignoutConfirmation = () => {
+    setShowSignoutConfirmation(true);
   };
   return (
     <div className='p-3 max-w-lg mx-auto'>
@@ -228,12 +242,15 @@ export default function Profile() {
       </form>
       <div className='flex justify-between mt-5'>
         <span
-          onClick={handleDeleteUser}
+          onClick={handleDeleteUserConfirmation}
           className='text-red-700 cursor-pointer'
         >
           Delete account
         </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
+        <span
+          onClick={handleSignoutConfirmation}
+          className='text-red-700 cursor-pointer'
+        >
           Sign out
         </span>
       </div>
@@ -286,6 +303,52 @@ export default function Profile() {
               </div>
             </div>
           ))}
+        </div>
+      )}
+      {/*confirmation boxes for signout and delete account */}
+
+      {showDeleteConfirmation && (
+        <div className='fixed w-full h-full flex items-center justify-center left-0 top-0 bg-red-700 bg-opacity-50'>
+          <div className='bg-white p-4 rounded-md'>
+            <p>Are you sure you want to delete your account?</p>
+            <p>All your data will be deleted!!</p>
+            <div className='flex justify-end mt-3'>
+              <button
+                onClick={handleDeleteUser}
+                className='bg-red-700 text-white p-2 rounded-lg mr-2'
+              >
+                Delete Account
+              </button>
+              <button
+                onClick={() => setShowDeleteConfirmation(false)}
+                className='bg-gray-300 text-gray-700 p-2 rounded-lg'
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showSignoutConfirmation && (
+        <div className='fixed w-full h-full flex items-center justify-center left-0 top-0 bg-black bg-opacity-50'>
+          <div className='bg-white p-4 rounded-md'>
+            <p>Are you sure you want to sign out?</p>
+            <div className='flex justify-end mt-3'>
+              <button
+                onClick={handleSignOut}
+                className='bg-red-700 text-white p-2 rounded-lg mr-2'
+              >
+                Yes
+              </button>
+              <button
+                onClick={() => setShowSignoutConfirmation(false)}
+                className='bg-gray-300 text-gray-700 p-2 rounded-lg'
+              >
+                No
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
