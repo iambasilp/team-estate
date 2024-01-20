@@ -38,6 +38,8 @@ export default function Home() {
       >
         <div
           className={`app__home-info flex-1 flex-col ${styles.flexStrt} xl:px-0 sm:px-16 px-6 mt-10`}
+
+    
         >
           <div className={``}></div>
 
