@@ -1,133 +1,105 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import SwiperCore from 'swiper';
-import 'swiper/css/bundle';
-import ListingItem from '../components/ListingItem';
+import styles from "../style";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { useSelector } from "react-redux";
+import SwiperCore from "swiper";
+import "swiper/css/bundle";
+import ListingItem from "../components/ListingItem";
+import HomeImage from "../assets/house-banner.png";
+import Search from "../assets/search.svg";
+import PropertieCards from "./PropertieCards";
 
 export default function Home() {
-  const [offerListings, setOfferListings] = useState([]);
-  const [saleListings, setSaleListings] = useState([]);
-  const [rentListings, setRentListings] = useState([]);
-  SwiperCore.use([Navigation]);
-  useEffect(() => {
-    const fetchOfferListings = async () => {
-      try {
-        const res = await fetch('/api/listing/get?offer=true&limit=4');
-        const data = await res.json();
-        setOfferListings(data);
-        fetchRentListings();
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    const fetchRentListings = async () => {
-      try {
-        const res = await fetch('/api/listing/get?type=rent&limit=4');
-        const data = await res.json();
-        setRentListings(data);
-        fetchSaleListings();
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const { currentUser } = useSelector((state) => state.user);
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("searchTerm", searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/search?${searchQuery}`);
+  };
 
-    const fetchSaleListings = async () => {
-      try {
-        const res = await fetch('/api/listing/get?type=sale&limit=4');
-        const data = await res.json();
-        setSaleListings(data);
-      } catch (error) {
-        log(error);
-      }
-    };
-    fetchOfferListings();
-  }, []);
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get("searchTerm");
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, [location.search]);
   return (
     <div>
       {/* top */}
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          Find your next <span className='text-slate-500'>perfect</span>
-          <br />
-          place with ease
-        </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
-          Sahand Estate is the best place to find your next perfect place to
-          live.
-          <br />
-          We have a wide range of properties for you to choose from.
-        </div>
-        <Link
-          to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
+      <section
+        className={`app__home flex flex-col md:flex-row ${styles.paddingY} `}
+      >
+        <div
+          className={`app__home-info flex-1 flex-col ${styles.flexStrt} xl:px-0 sm:px-16 px-6 mt-10`}
+
+    
         >
-          Let's get started...
-        </Link>
-      </div>
+          <div className={``}></div>
 
-      {/* swiper */}
-      <Swiper navigation>
-        {offerListings &&
-          offerListings.length > 0 &&
-          offerListings.map((listing) => (
-            <SwiperSlide>
-              <div
-                style={{
-                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
-                  backgroundSize: 'cover',
-                }}
-                className='h-[500px]'
-                key={listing._id}
-              ></div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
+          <div className="flex flex-col justify-center items-center sm:items-start">
+            <h1 className="font-poppins font-semibold text-[52px] sm:text-[72px] text-slate-700 leading-[75px] sm:leading-[100px] ">
+              Find your <br className="sm:block hidden" />
+              <span className="blue-gradient-text">Next perfect</span>
+            </h1>
 
-      {/* listing results for offer, sale and rent */}
+            <h1 className="font-poppins font-semibold text-[42px] sm:text-[68px] text-slate-700 leading-[75px] sm:leading-[100px] w-full">
+              Place with ease
+            </h1>
+          </div>
 
-      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
-        {offerListings && offerListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent offers</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-              {offerListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
+          <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
+            Our team of experts uses a methodology to identify the credit cards
+            most likely to fit your needs. We examine annual percentage rates,
+            annual fees.
+          </p>
+          <div className="mt-6 flex flex-col sm:flex-row  items-center ">
+            <form  onSubmit={handleSubmit} className="relative mb-4 sm:mb-0">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="px-6 py-3 w-full sm:w-64 border border-solid border-gray rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              />
+              <button className="absolute right-3 top-1/2 transform -translate-y-1/2 px-2 py-2 bg-blue-700 text-white rounded-md">
+                {/* Add your search icon or SVG here */}
+                <img
+                  type='text'
+                  src={Search}
+                  alt="billing"
+                  className="w-[23px] relative z-[5]"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </button>
+            </form>
+
+            <button className="bg-blue-700 font-bold text-white px-6 py-3 rounded-lg ml-4">
+              Get Started
+            </button>
           </div>
-        )}
-        {rentListings && rentListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-              {rentListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
-          </div>
-        )}
-        {saleListings && saleListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-              {saleListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
+        </div>
+
+        <div
+          className={`app__home-image ${styles.flexCenter} flex-1 md:my-0 my-10 relative`}
+        >
+          <img
+            src={HomeImage}
+            alt="billing"
+            className="w-[140%] h-[100%] relative z-[5]"
+          />
+        </div>
+        <div className={`ss:hidden ${styles.flexCenter}`}>
+          {/* <GetStarted /> */}
+        </div>
+      </section>
+      <PropertieCards />
     </div>
+
   );
 }
