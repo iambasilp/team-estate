@@ -17,6 +17,7 @@ import UpdateListing from "./pages/UpdateListing";
 import styles from "./style";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
+import PropertieCards from "./pages/PropertieCards";
 
 // Main App component
 export default function App() {
@@ -32,22 +33,25 @@ export default function App() {
 
         {/* Routes for different components */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/listing/:listingId" element={<Listing />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/properties' element={<PropertieCards/>} />
+        
+        <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/search' element={<Search />} />
+        <Route path='/listing/:listingId' element={<Listing />} />
 
-          {/* Use PrivateRoute with Outlet for nested routes */}
-          <Route path="/profile" element={<PrivateRoute />}>
-            <Route index element={<Profile />} />
-            {/* Make create-listing a relative path */}
-            <Route path="create-listing" element={<CreateListing />} />
-            <Route path="update-listing/:listingId" element={<UpdateListing />} />
-          </Route>
-        </Routes>
+        <Route element={<PrivateRoute />}>
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/create-listing' element={<CreateListing />} />
+          <Route
+            path='/update-listing/:listingId'
+            element={<UpdateListing />}
+          />
+        </Route>
+      </Routes>
       </BrowserRouter>
     </div>
   );
