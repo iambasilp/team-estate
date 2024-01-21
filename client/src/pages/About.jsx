@@ -113,7 +113,7 @@ export default function About() {
                   >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
-                      class='inline-block'
+                      className='inline-block'
                       width='1rem'
                       height='1rem'
                       viewBox='0 0 512 512'
@@ -131,7 +131,7 @@ export default function About() {
                   >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
-                      class='inline-block'
+                      className='inline-block'
                       width='1rem'
                       height='1rem'
                       viewBox='0 0 512 512'
@@ -149,7 +149,7 @@ export default function About() {
                   >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
-                      class='inline-block'
+                      className='inline-block'
                       width='1rem'
                       height='1rem'
                       viewBox='0 0 512 512'
@@ -175,7 +175,7 @@ export default function About() {
                   >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
-                      class='inline-block'
+                      className='inline-block'
                       width='1rem'
                       height='1rem'
                       viewBox='0 0 512 512'
