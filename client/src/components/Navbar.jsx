@@ -23,7 +23,7 @@ const Navbar = () => {
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins cursor-pointer text-black text-[16px] font-medium capitalize ${
+            className={`font-poppins cursor-pointer text-black text-[16px] xl:text-[20px] font-medium capitalize ${
               index === navLinks.length - 1 ? "mr-0" : "mr-10"
             }`}
           >
