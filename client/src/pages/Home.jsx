@@ -37,14 +37,14 @@ export default function Home() {
         className={`app__home flex flex-col md:flex-row ${styles.paddingY} `}
       >
         <div
-          className={`app__home-info flex-1 flex-col ${styles.flexStrt} xl:px-0 sm:px-16 px-6 mt-10`}
+          className={`app__home-info flex-1 flex-col ${styles.flexStart} mt-10 ${styles.paddingX}`}
 
     
         >
           <div className={``}></div>
 
           <div className="flex flex-col justify-center items-center sm:items-start">
-            <h1 className="font-poppins font-semibold text-[52px] sm:text-[72px] text-slate-700 leading-[75px] sm:leading-[100px] ">
+            <h1 className="font-poppins font-semibold text-[52px] sm:text-[72px] xl:text-[90px] text-slate-700 leading-[75px] sm:leading-[100px] ">
               Find your <br className="sm:block hidden" />
               <span className="blue-gradient-text">Next perfect</span>
             </h1>
@@ -59,14 +59,14 @@ export default function Home() {
             most likely to fit your needs. We examine annual percentage rates,
             annual fees.
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row  items-center ">
-            <form  onSubmit={handleSubmit} className="relative mb-4 sm:mb-0">
+          <div className="mt-6 flex flex-row  items-center justify-center ">
+            <form  onSubmit={handleSubmit} className="relative ">
               <input
                 type="text"
                 placeholder="Search..."
                 className="px-6 py-3 w-full sm:w-64 border border-solid border-gray rounded-md focus:outline-none focus:ring focus:border-blue-500"
               />
-              <button className="absolute right-3 top-1/2 transform -translate-y-1/2 px-2 py-2 bg-blue-700 text-white rounded-md">
+              <button className="absolute right-3 top-1/2 transform -translate-y-1/2 px-2 py-2  bg-blue-700 text-white rounded-md">
                 {/* Add your search icon or SVG here */}
                 <img
                   type='text'

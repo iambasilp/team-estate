@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function About() {
   return (
-    <div className='py-20 px-4 max-w-6xl mx-auto'>
+    <div className='section py-20 px-4 max-w-6xl mx-auto'>
       <h1 className='text-4xl font-extrabold mb-6 text-blue-700'>Welcome to Basil Estate</h1>
       <p className='mb-6 text-gray-800'>
         Discover the extraordinary world of Sahand Estate, where your real estate dreams come to life. We are not just a real estate agency; we are your partners in finding the perfect home, selling your property, and creating unforgettable living experiences.
