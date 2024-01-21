@@ -1,5 +1,6 @@
 // Import necessary components and hooks
 import React from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
@@ -22,12 +23,20 @@ import Footer from "./components/Footer";
 
 // Main App component
 export default function App() {
+  const [active, setActive] = useState(null);
+  useEffect(()=>{
+    const scrollAtive = ()=>{
+      setActive(window.scrollY > 20)
+    }
+    window.addEventListener('scroll',scrollAtive)
+    return ()=> window.removeEventListener('scroll',scrollAtive)
+},[active])
   return (
     <div className="bg-primary w-full overflow-hidden">
       <BrowserRouter>
         {/* Navbar is always visible */}
-        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-          <div className={`${styles.boxWidth}`}>
+        <div className={`${styles.paddingX} bg-primary ${styles.flexCenter} fixed top-0 left-0 w-full z-30  ${active ? 'shadow-lg bg-Solitude' : '' }`}>
+          <div className={`${styles.boxWidth} ${active ? "py-2 transition-all duration-300" : "py-4"} `}>
             <Navbar />
           </div>
         </div>

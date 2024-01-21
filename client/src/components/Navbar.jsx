@@ -10,7 +10,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="app__navbar w-full py-6 flex justify-between items-center">
+    <nav className="app__navbar w-full py-4 flex justify-between items-center">
       <div className="app__navbar-image">
         <Link to='/'>
 
