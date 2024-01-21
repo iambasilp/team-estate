@@ -10,7 +10,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="app__navbar w-full py-6 flex justify-between items-center">
+    <nav className="app__navbar w-full py-4 flex justify-between items-center">
       <div className="app__navbar-image">
         <Link to='/'>
 
@@ -23,7 +23,7 @@ const Navbar = () => {
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins cursor-pointer text-black text-[16px] font-medium capitalize ${
+            className={`font-poppins cursor-pointer text-black text-[16px] xl:text-[20px] font-medium capitalize ${
               index === navLinks.length - 1 ? "mr-0" : "mr-10"
             }`}
           >

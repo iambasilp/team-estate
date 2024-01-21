@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
-    <div className='py-20 px-4 max-w-6xl mx-auto'>
+    <div className='section py-20 px-4 max-w-6xl mx-auto'>
       <h1 className='text-4xl font-extrabold mb-6 text-blue-700'>
         Welcome to BNAS
       </h1>
@@ -19,10 +19,10 @@ export default function About() {
       </p>
       <p className='mb-6 text-gray-800'>
         {' '}
-        At BNAS, we redefine the online real estate
-        experience, providing you with the tools to make informed decisions and
-        find a home that resonates with your lifestyle. Explore the
-        possibilities - your ideal property is just a click away.
+        At BNAS, we redefine the online real estate experience, providing you
+        with the tools to make informed decisions and find a home that resonates
+        with your lifestyle. Explore the possibilities - your ideal property is
+        just a click away.
       </p>
       <p className='mb-6 font-semibold text-lg text-slate-900'>
         Welcome to BNAS, Welcome Home..
