@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
-    <div className='section py-20 px-4 max-w-6xl mx-auto'>
-      <h1 className='text-4xl font-extrabold mb-6 text-blue-700'>
+    <div className='section py-20 px-4 m-6 max-w-6xl mx-auto'>
+      <h1 className='text-4xl font-extrabold mb-6 blue-gradient-text'>
         Welcome to BNAS
       </h1>
       <p className='mb-6 text-gray-800'>
@@ -38,7 +38,7 @@ export default function About() {
             <div className='w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-4'>
               <Link className='cursor-pointer'>
                 <img
-                  className='w-24 h-24 rounded-full object-cover mx-auto mb-2 '
+                  className='w-24 h-24 rounded-full object-cover mx-auto mb-2 hover:scale-110 transform transition duration-500 ease-in-out'
                   src='https://www.rugbyafrique.com/wp-content/uploads/2018/02/team-member.jpg'
                   alt='Team Member 1'
                 />
@@ -48,7 +48,7 @@ export default function About() {
             <div className='w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-4'>
               <Link className='cursor-pointer'>
                 <img
-                  className='w-24 h-24 rounded-full object-cover mx-auto mb-2 '
+                  className='w-24 h-24 rounded-full object-cover mx-auto mb-2 hover:scale-110 transform transition duration-500 ease-in-out '
                   src='https://www.rugbyafrique.com/wp-content/uploads/2018/02/team-member.jpg'
                   alt='Team Member 2'
                 />
@@ -58,7 +58,7 @@ export default function About() {
             <div className='w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-4'>
               <Link className='cursor-pointer'>
                 <img
-                  className='w-24 h-24 rounded-full object-cover mx-auto mb-2 '
+                  className='w-24 h-24 rounded-full object-cover mx-auto mb-2 hover:scale-110 transform transition duration-500 ease-in-out '
                   src='https://www.rugbyafrique.com/wp-content/uploads/2018/02/team-member.jpg'
                   alt='Team Member 3'
                 />
@@ -68,7 +68,7 @@ export default function About() {
             <div className='w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-4'>
               <Link className='cursor-pointer'>
                 <img
-                  className='w-24 h-24 rounded-full object-cover mx-auto mb-2 '
+                  className='w-24 h-24 rounded-full object-cover mx-auto mb-2 hover:scale-110 transform transition duration-500 ease-in-out '
                   src='https://www.rugbyafrique.com/wp-content/uploads/2018/02/team-member.jpg'
                   alt='Team Member 4'
                 />
