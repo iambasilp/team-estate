@@ -7,12 +7,12 @@ import listingRouter from "./routes/listing.route.js";
 import cookieParser from "cookie-parser";
 import path from "path";
 import connectDB from "./config/connectDB.js";
+import manageErrors from "./middleware/manageErrors.js";
+import { errorHandler } from "./utils/error.js";
 dotenv.config();
 
 // ? Connect to DB
 connectDB();
-
-const __dirname = path.resolve();
 
 const app = express();
 
@@ -24,24 +24,14 @@ app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
-app.use(express.static(path.join(__dirname, "/client/dist")));
+// ? if the router is not found, send 404 error
+app.use((req, res, next) => next(errorHandler(404, "Router not found!")));
 
-app.get("*", (req, res) => {
-     res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+// ? handle errors
+app.use(manageErrors);
 
 // ? once connected to DB, start server
 mongoose.connection.once("open", () => {
      console.log("connected to DB");
      app.listen(3000, () => console.log("Server is running on port 3000!"));
-});
-
-app.use((err, req, res, next) => {
-     const statusCode = err.statusCode || 500;
-     const message = err.message || "Internal Server Error";
-     return res.status(statusCode).json({
-          success: false,
-          statusCode,
-          message,
-     });
 });
