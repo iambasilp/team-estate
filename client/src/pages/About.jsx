@@ -81,18 +81,18 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className='mt-32 bg-gray-100 rounded-lg'>
+      <div className='mt-32 rounded-lg'>
         <section className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12'>
           <div className='text-center pb-12'>
-            <h1 className='font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900'>
+            <h1 className='font-bold text-xl md:text-4xl lg:text-4xl font-heading text-gray-900'>
               Meet our team
             </h1>
           </div>
-          <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+          <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-16'>
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className='w- bg-white rounded-lg pt-2 sm:pt-12 flex flex-col justify-center items-center'
+                className='w- bg-dimBlue rounded-lg pt-2 sm:pt-12 flex flex-col justify-center items-center'
               >
                 <img
                   className='object-center object-cover rounded-full h-24 w-24 sm:mb-5'
@@ -107,7 +107,7 @@ export default function About() {
                 {/* socials icons of the team memberS*/}
                 <div className='mt-2 mb-2 sm:mb-5 md:mb-5 space-x-2 flex '>
                   <a
-                    className='hover:text-blue-700'
+                    className='hover:text-red-600'
                     aria-label='Twitter link'
                     href={member.twitter}
                   >
@@ -116,16 +116,16 @@ export default function About() {
                       className='inline-block'
                       width='1rem'
                       height='1rem'
-                      viewBox='0 0 512 512'
+                      viewBox='0 0 50 50'
                     >
                       <path
                         fill='currentColor'
-                        d='M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z'
+                        d='M 5.5 7 C 3.0385965 7 1 9.0385965 1 11.5 L 1 38.5 C 1 40.961404 3.0385965 43 5.5 43 L 44.5 43 C 46.961404 43 49 40.961404 49 38.5 L 49 11.5 C 49 11.486654 48.996213 11.474258 48.996094 11.460938 C 48.996537 11.440306 49 11.421244 49 11.400391 L 48.990234 11.400391 C 48.934958 8.9848435 46.92738 7 44.5 7 L 5.5 7 z M 8.171875 9 L 41.865234 9 L 25 20.779297 L 8.171875 9 z M 4.8398438 9.1074219 L 25 23.220703 L 45.189453 9.1171875 C 46.192029 9.4257198 46.96467 10.363517 46.994141 11.4375 C 46.975926 11.681812 46.765817 12.080784 46.462891 12.412109 C 46.146099 12.7586 45.833984 12.976563 45.833984 12.976562 L 45.828125 12.980469 L 24.998047 27.775391 L 4.171875 13.080078 L 4.1660156 13.076172 C 4.1660156 13.076172 3.8539008 12.860163 3.5371094 12.513672 C 3.2203595 12.167182 3 11.739744 3 11.5 C 3 10.389458 3.8030909 9.4120336 4.8398438 9.1074219 z M 47 14.597656 L 47 38.5 C 47 39.838596 45.838596 41 44.5 41 L 44 41 L 44 16.732422 L 46.966797 14.625 L 46.974609 14.617188 C 46.974952 14.616953 46.998058 14.599 47 14.597656 z M 3 14.699219 C 3.0016742 14.700381 3.0230849 14.716556 3.0234375 14.716797 L 3.0273438 14.720703 L 3.0332031 14.724609 L 6 16.818359 L 6 41 L 5.5 41 C 4.1614035 41 3 39.838596 3 38.5 L 3 14.699219 z M 42 18.152344 L 42 41 L 8 41 L 8 18.228516 L 25.001953 30.224609 L 42 18.152344 z'
                       ></path>
                     </svg>
                   </a>
                   <a
-                    className='hover:text-blue-700'
+                    className='hover:text-blue-900'
                     aria-label='Facebook link'
                     href={member.facebook}
                   >
@@ -143,7 +143,7 @@ export default function About() {
                     </svg>
                   </a>
                   <a
-                    className='hover:text-blue-700'
+                    className='hover:text-pink-600'
                     aria-label='Instagram link'
                     href={member.instagram}
                   >
