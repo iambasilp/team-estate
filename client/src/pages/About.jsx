@@ -1,4 +1,5 @@
 import React from 'react';
+import twitter from '../assets/twitter.svg';
 
 export default function About() {
   // array of team members with their socials links and images
@@ -81,12 +82,23 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className='mt-32 rounded-lg'>
+      <div className='mt-32 rounded-lg '>
         <section className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12'>
           <div className='text-center pb-12'>
-            <h1 className='font-bold text-xl md:text-4xl lg:text-4xl font-heading text-gray-900'>
+            <h1 className='font-bold text-xl md:text-4xl lg:text-4xl font-heading text-gray-900 pb-10'>
               Meet our team
             </h1>
+            <p>
+              BNAS is a collaborative effort done by
+              our college team showcasing our React web development skills.
+            </p>
+            <p>
+              Our college project, the MERN Real Estate App, redefines the real
+              estate browsing experience with a sophisticated and feature-rich
+              web application. The modern and intuitive user interface
+              seamlessly integrates interactive property listings and robust
+              user authentication features.
+            </p>
           </div>
           <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-16'>
             {teamMembers.map((member) => (
