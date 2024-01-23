@@ -51,7 +51,7 @@ const PropertieCards = () => {
       {/* listing results for offer, sale and rent */}
 
       <section
-        className={`propertie__cards max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10 ${styles.paddingY} `}
+        className={`propertie__cards max-w-6xl mx-auto p-3 flex flex-col gap-8 `}
       >
         {offerListings && offerListings.length > 0 && (
           <div className="">
@@ -66,7 +66,7 @@ const PropertieCards = () => {
                 Show more offers
               </Link>
             </div>
-            <div className="flex flex-wrap justify-between gap-y-6">
+            <div className={`flex flex-wrap justify-between gap-y-6`}>
               {offerListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
