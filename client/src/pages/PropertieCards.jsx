@@ -51,7 +51,7 @@ const PropertieCards = () => {
       {/* listing results for offer, sale and rent */}
 
       <section
-        className={`propertie__cards max-w-6xl mx-auto p-3 flex flex-col gap-8 `}
+        className={`propertie__cards max-w-6xl mx-auto p-3 flex flex-col gap-8 my-28 `}
       >
         {offerListings && offerListings.length > 0 && (
           <div className="">
