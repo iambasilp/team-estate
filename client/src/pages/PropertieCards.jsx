@@ -53,13 +53,20 @@ const PropertieCards = () => {
       <section
         className={`propertie__cards max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10 ${styles.paddingY} `}
       >
-      {offerListings && offerListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent offers</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
+        {offerListings && offerListings.length > 0 && (
+          <div className="">
+            <div className="my-3">
+              <h2 className="text-2xl font-semibold text-slate-600">
+                Recent offers
+              </h2>
+              <Link
+                className="text-sm text-blue-800 hover:underline"
+                to={"/search?offer=true"}
+              >
+                Show more offers
+              </Link>
             </div>
-            <div className='flex flex-wrap gap-4'>
+            <div className="flex flex-wrap justify-between gap-y-6">
               {offerListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
@@ -80,7 +87,7 @@ const PropertieCards = () => {
                 Show more places for rent
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex justify-between flex-wrap gap-y-6">
               {rentListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
@@ -100,7 +107,7 @@ const PropertieCards = () => {
                 Show more places for sale
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className={`flex flex-wrap justify-between gap-y-6`}>
               {saleListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
