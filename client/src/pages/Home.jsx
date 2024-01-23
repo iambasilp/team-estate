@@ -38,8 +38,6 @@ export default function Home() {
       >
         <div
           className={`app__home-info flex-1 flex-col ${styles.flexStart} mt-10 ${styles.paddingX}`}
-
-    
         >
           <div className={``}></div>
 
@@ -55,12 +53,12 @@ export default function Home() {
           </div>
 
           <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-            Our team of experts uses a methodology to identify the credit cards
-            most likely to fit your needs. We examine annual percentage rates,
-            annual fees.
+            Bnas, your trusted partner in real estate, offers top-notch services
+            for buying and selling properties, ensuring a seamless and
+            satisfying experience for our valued clients.
           </p>
           <div className="mt-6 flex flex-row  items-center justify-center gap-3 ">
-            <form  onSubmit={handleSubmit} className="relative ">
+            <form onSubmit={handleSubmit} className="relative ">
               <input
                 type="text"
                 placeholder="Search..."
@@ -71,7 +69,7 @@ export default function Home() {
               <button className="absolute right-3 top-1/2 transform -translate-y-1/2 px-2 py-2  bg-blue-700 text-white rounded-md">
                 {/* Add your search icon or SVG here */}
                 <img
-                  type='text'
+                  type="text"
                   src={Search}
                   alt="billing"
                   className="w-[23px] relative z-[5]"
@@ -79,7 +77,10 @@ export default function Home() {
               </button>
             </form>
 
-            <Link className="bg-blue-700 font-bold text-white px-6 py-3 rounded-lg" to='/search'>
+            <Link
+              className="bg-blue-700 font-bold text-white px-6 py-3 rounded-lg"
+              to="/search"
+            >
               Get Started
             </Link>
           </div>
@@ -100,6 +101,5 @@ export default function Home() {
       </section>
       <PropertieCards />
     </div>
-
   );
 }
