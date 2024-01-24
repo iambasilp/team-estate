@@ -22,6 +22,7 @@ import PropertieCards from "./pages/PropertieCards";
 import Team from "./pages/Team/Team";
 import Footer from "./components/Footer";
 import Services from "./pages/Services";
+import ContactUs from "./pages/ContactUs";
 
 // Main App component
 export default function App() {
@@ -57,6 +58,7 @@ export default function App() {
                <Route path="/search" element={<Search />} />
                <Route path="/listing/:listingId" element={<Listing />} />
                <Route path="/services" element={<Services />} />
+               <Route path="/contact" element={<ContactUs />} />
 
                <Route element={<PrivateRoute />}>
                   <Route path="/profile" element={<Profile />} />
