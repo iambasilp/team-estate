@@ -21,6 +21,7 @@ import Search from "./pages/Search";
 import PropertieCards from "./pages/PropertieCards";
 import Team from "./pages/Team/Team";
 import Footer from "./components/Footer";
+import Services from "./pages/Services";
 
 
 // Main App component
@@ -54,6 +55,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/search" element={<Search />} />
           <Route path="/listing/:listingId" element={<Listing />} />
+          <Route path="/services" element={<Services />} />
 
           <Route element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
