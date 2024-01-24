@@ -34,7 +34,7 @@ export default function Home() {
     <div>
       {/* top */}
       <section
-        className={`app__home flex flex-col md:flex-row sm:py-32 py-24 `}
+        className={`app__home flex flex-col md:flex-row sm:py-32  `}
       >
         <div
           className={`app__home-info flex-1 flex-col ${styles.flexStart} mt-10 ${styles.paddingX}`}
