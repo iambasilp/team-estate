@@ -32,6 +32,6 @@ app.use(manageErrors);
 
 // ? once connected to DB, start server
 mongoose.connection.once("open", () => {
-     console.log("connected to DB");
-     app.listen(3000, () => console.log("Server is running on port 3000!"));
+   console.log("connected to DB");
+   app.listen(3000, () => console.log("Server is running on port 3000!"));
 });
