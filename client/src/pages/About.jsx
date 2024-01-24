@@ -7,14 +7,14 @@ export default function About() {
     <div className={`section  sm:py-28 py-20   m-6 max-w-6xl mx-auto`}>
       <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
         <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-          <div class="max-w-[550px] rounded-lg overflow-hidden shadow-xl">
+          <div className="max-w-[550px] rounded-lg overflow-hidden shadow-xl">
             <img
               src="https://images.unsplash.com/photo-1628133287836-40bd5453bed1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="image"
               loading="lazy"
               width=""
               height=""
-              class="rounded-lg transition-transform transform hover:scale-105"
+              className="rounded-lg transition-transform transform hover:scale-105"
             />
           </div>
 
