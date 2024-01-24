@@ -10,7 +10,7 @@ export default function services() {
          <div className="container relative m-auto px-6 text-gray-500 md:px-12">
             <div className="grid gap-6 md:mx-auto md:w-8/12 lg:w-full lg:grid-cols-3">
                <div className="group space-y-6 border border-gray-100 dark:border-gray-700 rounded-3xl bg-white dark:bg-gray-800 px-8 py-12 text-center shadow-2xl shadow-gray-600/10 dark:shadow-none">
-                  <img className="mx-auto w-24" src={serviceOne} alt="illustration" loading="lazy" />
+                  <img className="mx-auto w-32" src={serviceOne} alt="illustration" loading="lazy" />
                   <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">Web development</h3>
                   <p>
                      Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa
@@ -38,7 +38,7 @@ export default function services() {
                   </a>
                </div>
                <div className="group space-y-6 border border-gray-100 dark:border-gray-700 rounded-3xl bg-white dark:bg-gray-800 px-8 py-12 text-center shadow-2xl shadow-gray-600/10 dark:shadow-none">
-                  <img className="mx-auto w-24" src={serviceThree} alt="illustration" loading="lazy" />
+                  <img className="mx-auto w-32" src={serviceThree} alt="illustration" loading="lazy" />
                   <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">Web Design</h3>
                   <p>
                      Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa
