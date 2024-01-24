@@ -5,7 +5,7 @@ import styles from "../style";
 
 export default function About() {
    return (
-      <div className={`section sm:py-16 py-12 m-6 max-w-6xl mx-auto flex justify-center items-center`}>
+      <div className={`section sm:py-20 py-12 m-6 max-w-6xl mx-auto flex justify-center items-center`}>
          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 max-w-6xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-xl mb-6 md:mb-0">
                <img
