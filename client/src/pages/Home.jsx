@@ -99,7 +99,10 @@ export default function Home() {
           {/* <GetStarted /> */}
         </div>
       </section>
-      <PropertieCards />
+  
+
+      <PropertieCards/>
+
     </div>
   );
 }
