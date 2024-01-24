@@ -4,7 +4,7 @@ import styles from "../style";
 export default function About() {
 
   return (
-    <div className={`section sm:py-28 py-20   m-6 max-w-6xl mx-auto`}>
+    <div className={`section  sm:py-28 py-20   m-6 max-w-6xl mx-auto`}>
       <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
         <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
           <div class="max-w-[550px] rounded-lg overflow-hidden shadow-xl">
