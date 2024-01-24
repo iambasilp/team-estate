@@ -28,14 +28,10 @@ export default function About() {
                      helping clients achieve their real estate dreams.
                   </p>
                   <p className="mb-4">
-                     <strong>Our Expertise:</strong> We specialize in helping buyers and sellers in the [YOUR NEIGHBORHOODS OR
-                     AREAS OF FOCUS]. Whether you're seeking a charming bungalow, a spacious family home, or a luxurious
-                     waterfront property, we'll guide you through every step of the process.
+                     <strong>Our Expertise:</strong> We specialize in assisting buyers and sellers in the vibrant neighborhoods of Mumbai, from the bustling streets of Bandra to the upscale residences in South Mumbai. Whether you're in search of a contemporary apartment or a luxurious penthouse, we'll guide you through every step of the process.
                   </p>
                   <p className="mb-4">
-                     <strong>Our Commitment:</strong> We're proud to be an active member of the [YOUR COMMUNITY] community. We
-                     support local initiatives and organizations that make our neighborhoods vibrant and thriving places to
-                     live.
+                     <strong>Our Commitment:</strong> We take pride in actively participating in the Mumbai and Bangalore communities, supporting local initiatives and organizations that contribute to the vibrancy and thriving atmosphere of our neighborhoods.
                   </p>
                </div>
 
