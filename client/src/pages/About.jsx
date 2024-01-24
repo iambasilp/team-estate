@@ -33,7 +33,7 @@ export default function About() {
               decisions and find a home that resonates with your lifestyle. Explore the possibilities - your ideal
               property is just a click away.
             </p>
-            <Link className="bg-blue-700 font-bold text-white px-6 py-3 rounded-lg" to="/search">
+            <Link className="bg-blue-700 hover:bg-gray-800 font-bold text-white px-6 py-3 rounded-lg" to="/search">
               Get Started
             </Link>
           </div>
