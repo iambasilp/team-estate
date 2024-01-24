@@ -9,7 +9,7 @@ export default function About() {
          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 max-w-6xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-xl mb-6 md:mb-0">
                <img
-                  src="https://images.unsplash.com/photo-1628133287836-40bd5453bed1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="https://cdn.gencraft.com/prod/user/a1356a66-65af-4036-8a38-378b281c12da/9cf6e14d-ba51-4e1e-a0f9-aa3c27ecf7f9/image/image1_0.jpg?Expires=1706195289&Signature=Yw-t2YTSUm5upnbEYvF5ONgMbBlmwf3PXOx8fd8uw5esY6hOdY9bPA~ZCK0e3qBXN2U2Ocs-TS-hxIPhDsl8bJFIj2HFbiTMcZrCq1H0UBeGovwbNkPwP5P6nLtKypa92J0b3tm00-T2JPO0DcDZxOx2CASlgVQD5pdY9xPFvXoAxIosXwIkAt9-QWPVHnLvzbjajEsO~K1cJzL5c3lcqvJAucjulkPgKrqH5kMPUyU4dlUKkMYb-DxHTg9iouL-NyGgjCi7-AWrACYkq42y99zpf1GhMyciYVQqG-ZBjdqDOBO4LivDGeR-QuOZRdgeGM9jHA35H9CLJnF6KzVcHw__&Key-Pair-Id=K3RDDB1TZ8BHT8"
                   alt="Our Team"
                   loading="lazy"
                   className="w-full object-cover transition-transform transform hover:scale-105 rounded-md"
@@ -51,7 +51,21 @@ export default function About() {
                   chat about your real estate goals. We're here to make your dreams a reality.
                </p>
 
-               
+               <div className="flex justify-center space-x-4">
+                  <Link
+                     className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-full"
+                     to="/search"
+                  >
+                     Browse Listings
+                  </Link>
+
+                  <Link
+                     className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-full"
+                     to="/contact"
+                  >
+                     Contact Us
+                  </Link>
+               </div>
             </div>
          </div>
       </div>
