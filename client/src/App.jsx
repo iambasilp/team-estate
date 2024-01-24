@@ -19,7 +19,9 @@ import styles from "./style";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
 import PropertieCards from "./pages/PropertieCards";
+import Team from "./pages/Team/Team";
 import Footer from "./components/Footer";
+
 
 // Main App component
 export default function App() {
@@ -46,7 +48,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/properties" element={<PropertieCards />} />
-
+          <Route path="/team" element={<Team/> } />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/about" element={<About />} />
