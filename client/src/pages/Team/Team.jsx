@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import styles from "../../style";
 export default function About() {
   return (
-    <div className={`${styles.paddingY}`}>
+    <div className={`${styles.paddingY} mt-5`}>
       <div className={`py-20 ${styles.paddingX}`}>
         <div className="xl:container mx-auto px-6 md:px-12">
           <div className="mb-16 md:w-2/3 lg:w-1/2">
-            <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">BNAS Team Leadership</h2>
-            <p className="text-gray-600 dark:text-gray-300">
+            <h2 className="mb-4 text-2xl font-bold text-gray-800 md:text-4xl">BNAS Team Leadership</h2>
+            <p className="text-gray-600 ">
               Guided by a vision for excellence, BNAS takes pride in its leadership, composed of some of the brightest
               minds and experienced executives in the real estate business.
             </p>

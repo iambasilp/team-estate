@@ -10,6 +10,7 @@ module.exports = {
         dimWhite: "rgba(0, 0, 0, 0.7)", // Adjust dimWhite color
         darkblue: "#1976D2", // Adjust dimWhite color
         dimBlue: "rgba(0, 123, 255, 0.1)", // Adjust dimBlue color
+        facebook: "#316FF6", // Adjust dimBlue color
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
