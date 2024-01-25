@@ -23,6 +23,7 @@ import Team from "./pages/Team/Team";
 import Footer from "./components/Footer";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
+import FAQ from "./pages/Faq";
 
 // Main App component
 export default function App() {
@@ -50,14 +51,15 @@ export default function App() {
             <Routes>
                <Route path="/" element={<Home />} />
                <Route path="/home" element={<Home />} />
+               <Route path="/about" element={<About />} />
+               <Route path="/services" element={<Services />} />
                <Route path="/properties" element={<PropertieCards />} />
                <Route path="/team" element={<Team />} />
+               <Route path="/faq" element={<FAQ />} />
                <Route path="/sign-in" element={<SignIn />} />
                <Route path="/sign-up" element={<SignUp />} />
-               <Route path="/about" element={<About />} />
                <Route path="/search" element={<Search />} />
                <Route path="/listing/:listingId" element={<Listing />} />
-               <Route path="/services" element={<Services />} />
                <Route path="/contact" element={<ContactUs />} />
 
                <Route element={<PrivateRoute />}>
