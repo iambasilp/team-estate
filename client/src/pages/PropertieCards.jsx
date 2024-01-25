@@ -50,7 +50,7 @@ const PropertieCards = () => {
       <div>
          {/* listing results for offer, sale and rent */}
 
-         <section className={`propertie__cards max-w-12xl ${styles.paddingX} mx-auto p-3 flex flex-col gap-8 my-28`}>
+         <section className={`propertie__cards max-w-12xl ${styles.paddingX} mx-auto p-3 flex flex-col gap-8 my-28 bg-gradient-to-tr from-indigo-100 via-purple-50 to-teal-100 dark:from-indigo-900 dark:via-purple-300 dark:to-teal-900`}>
             {offerListings && offerListings.length > 0 && (
                <div className="">
                   <div className="my-3">
