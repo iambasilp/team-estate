@@ -4,9 +4,9 @@ import styles from "../../style";
 export default function About() {
    return (
       <div className={`${styles.paddingY} mt-5`}>
-         <div className={`py-20 ${styles.paddingX}`}>
+         <div className={`py-20`}>
             <div className="xl:container mx-auto px-6 md:px-12">
-               <div className="mb-16 md:w-2/3 lg:w-1/2">
+               <div className="mb-20 text-center">
                   <h2 className="mb-4 text-2xl font-bold text-gray-800 md:text-4xl">BNAS Team Leadership</h2>
                   <p className="text-gray-600 ">
                      Guided by a vision for excellence, BNAS takes pride in its leadership, composed of some of the
@@ -23,7 +23,7 @@ export default function About() {
                </div>
 
                <div className="grid gap-6 px-4 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  <div className="group relative rounded-2xl  space-y-6 overflow-hidden">
+                  <div className="group relative rounded-lg  space-y-6 overflow-hidden">
                      <img
                         className="mx-auto h-[26rem] w-full grayscale object-cover object-top ransition duration-500 group-hover:scale-105 group-hover:grayscale-0"
                         src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
@@ -42,7 +42,7 @@ export default function About() {
                         </p>
                      </div>
                   </div>
-                  <div className="group relative rounded-3xl  space-y-6 overflow-hidden">
+                  <div className="group relative rounded-lg  space-y-6 overflow-hidden">
                      <img
                         className="mx-auto h-[26rem] w-full grayscale object-cover object-top ransition duration-500 group-hover:scale-105 group-hover:grayscale-0"
                         src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
@@ -61,7 +61,7 @@ export default function About() {
                         </p>
                      </div>
                   </div>
-                  <div className="group relative rounded-3xl  space-y-6 overflow-hidden">
+                  <div className="group relative rounded-lg  space-y-6 overflow-hidden">
                      <img
                         className="mx-auto h-[26rem] w-full grayscale object-cover object-top transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
                         src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
@@ -80,7 +80,7 @@ export default function About() {
                         </p>
                      </div>
                   </div>
-                  <div className="group relative rounded-3xl  space-y-6 overflow-hidden">
+                  <div className="group relative rounded-lg  space-y-6 overflow-hidden">
                      <img
                         className="mx-auto h-[26rem] w-full grayscale object-cover object-top ransition duration-500 group-hover:scale-105 group-hover:grayscale-0"
                         src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww"
