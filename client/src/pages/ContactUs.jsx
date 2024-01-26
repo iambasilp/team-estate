@@ -32,13 +32,13 @@ function ContactUs() {
                   <ContactButton
                      href="https://wa.me/911234567890"
                      text="WhatsApp"
-                     bgColor="bg-green-500"
+                     bgColor="bg-blue-500"
                      hoverColor="bg-green-600"
                   />
                   <ContactButton
                      href="mailto:something@gmail.com"
                      text="Gmail"
-                     bgColor="bg-red-500"
+                     bgColor="bg-blue-500"
                      hoverColor="bg-red-600"
                   />
                </div>
@@ -84,3 +84,4 @@ function ContactIconLink({ href, icon }) {
 }
 
 export default ContactUs;
+
