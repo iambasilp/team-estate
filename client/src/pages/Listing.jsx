@@ -86,6 +86,17 @@ export default function Listing() {
                      <FaMapMarkerAlt className="text-green-700" />
                      {listing.address}
                   </p>
+                  {listing.locationUrl && (
+                     <a
+                        href={listing.locationUrl}
+                        className="flex items-center gap-2 text-green-700 hover:text-blue-700 underline text-sm"
+                        target="_blank"
+                     >
+                        <FaMapMarkedAlt />
+                        Location
+                     </a>
+                  )}
+
                   <div className="flex gap-4">
                      <p className="bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md">
                         {listing.type === "rent" ? "For Rent" : "For Sale"}

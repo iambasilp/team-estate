@@ -117,7 +117,12 @@ export default function CreateListing() {
          });
       }
 
-      if (e.target.type === "number" || e.target.type === "text" || e.target.type === "textarea") {
+      if (
+         e.target.type === "number" ||
+         e.target.type === "text" ||
+         e.target.type === "textarea" ||
+         e.target.type === "url"
+      ) {
          setFormData({
             ...formData,
             [e.target.id]: e.target.value,
@@ -187,6 +192,14 @@ export default function CreateListing() {
                   required
                   onChange={handleChange}
                   value={formData.address}
+               />
+               <input
+                  type="url"
+                  placeholder="location url (google maps)"
+                  className="border p-3 rounded-lg"
+                  id="locationUrl"
+                  onChange={handleChange}
+                  value={formData.locationUrl}
                />
                <div className="flex gap-6 flex-wrap">
                   <div className="flex gap-2">
