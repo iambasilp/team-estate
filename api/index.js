@@ -1,11 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import listingRouter from "./routes/listing.route.js";
-import cookieParser from "cookie-parser";
-import path from "path";
+
 import connectDB from "./config/connectDB.js";
 import manageErrors from "./middleware/manageErrors.js";
 import { errorHandler } from "./utils/error.js";
