@@ -30,4 +30,24 @@ const findUsers = async (req, res, next) => {
    }
 };
 
-export { getUsers, findUsers };
+// ? delete user by user id
+const deleteUser = async (req, res, next) => {
+   const { id } = req.params;
+
+   const user = await User.findById(id);
+   if (!user) return next(errorHandler(404, "user not found"));
+
+   try {
+      // ? check if the user is deleting himself
+      if (id === req.user.id) {
+         next(errorHandler(400, "you can't delete yourself"));
+      } else {
+         await User.findByIdAndDelete(id);
+         res.status(200).json("user deleted");
+      }
+   } catch (error) {
+      next(error);
+   }
+};
+
+export { getUsers, findUsers, deleteUser };
