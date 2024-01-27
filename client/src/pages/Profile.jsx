@@ -13,6 +13,7 @@ import {
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import ConfirmationModal from "../components/ConfirmModal";
 
 export default function Profile() {
    const fileRef = useRef(null);
@@ -269,44 +270,22 @@ export default function Profile() {
          )}
          {/*confirmation boxes for signout and delete account */}
 
-         {showDeleteConfirmation && (
-            <div className="fixed w-full h-full flex items-center justify-center left-0 top-0 bg-red-700 bg-opacity-50">
-               <div className="bg-white p-4 rounded-md">
-                  <p>Are you sure you want to delete your account?</p>
-                  <p>All your data will be deleted!!</p>
-                  <div className="flex justify-end mt-3">
-                     <button onClick={handleDeleteUser} className="bg-red-700 text-white p-2 rounded-lg mr-2">
-                        Delete Account
-                     </button>
-                     <button
-                        onClick={() => setShowDeleteConfirmation(false)}
-                        className="bg-gray-300 text-gray-700 p-2 rounded-lg"
-                     >
-                        No
-                     </button>
-                  </div>
-               </div>
-            </div>
-         )}
+         <ConfirmationModal
+            confirmButton="Delete Account"
+            bgcolor={"bg-red-700 bg-opacity-50"}
+            isOpen={showDeleteConfirmation}
+            onConfirm={handleDeleteUser}
+            onCancel={() => setShowDeleteConfirmation(false)}
+            message="Are you sure you want to delete your account?"
+         />
 
-         {showSignoutConfirmation && (
-            <div className="fixed w-full h-full flex items-center justify-center left-0 top-0 bg-black bg-opacity-50">
-               <div className="bg-white p-4 rounded-md">
-                  <p>Are you sure you want to sign out?</p>
-                  <div className="flex justify-end mt-3">
-                     <button onClick={handleSignOut} className="bg-red-700 text-white p-2 rounded-lg mr-2">
-                        Yes
-                     </button>
-                     <button
-                        onClick={() => setShowSignoutConfirmation(false)}
-                        className="bg-gray-300 text-gray-700 p-2 rounded-lg"
-                     >
-                        No
-                     </button>
-                  </div>
-               </div>
-            </div>
-         )}
+         <ConfirmationModal
+            confirmButton="SignOut"
+            isOpen={showSignoutConfirmation}
+            onConfirm={handleSignOut}
+            onCancel={() => setShowSignoutConfirmation(false)}
+            message="Are you sure you want to sign out?"
+         />
       </div>
    );
 }
