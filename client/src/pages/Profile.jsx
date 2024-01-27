@@ -157,15 +157,19 @@ export default function Profile() {
       }
    };
 
-   //confirmation message when sign out and delete account
+   //confirmation message when sign out , delete account and delete listing
    const [showSignoutConfirmation, setShowSignoutConfirmation] = useState(false);
    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+   const [showListingDeleteConfirmation, setShowListingDeleteConfirmation] = useState(false);
    const handleDeleteUserConfirmation = () => {
       setShowDeleteConfirmation(true);
    };
 
    const handleSignoutConfirmation = () => {
       setShowSignoutConfirmation(true);
+   };
+   const handleListingDeleteConfirmation = () => {
+      setShowListingDeleteConfirmation(true);
    };
    return (
       <div className="p-3 max-w-lg mx-auto">
@@ -257,7 +261,7 @@ export default function Profile() {
                      </Link>
 
                      <div className="flex flex-col item-center">
-                        <button onClick={() => handleListingDelete(listing._id)} className="text-red-700 uppercase">
+                        <button onClick={handleListingDeleteConfirmation} className="text-red-700 uppercase">
                            Delete
                         </button>
                         <Link to={`/update-listing/${listing._id}`}>
@@ -280,12 +284,24 @@ export default function Profile() {
          />
 
          <ConfirmationModal
-            confirmButton="SignOut"
+            bgcolor={"bg-black bg-opacity-50"}
+            confirmButton="Sign Out"
             isOpen={showSignoutConfirmation}
             onConfirm={handleSignOut}
             onCancel={() => setShowSignoutConfirmation(false)}
             message="Are you sure you want to sign out?"
          />
+         <ConfirmationModal
+            bgcolor={"bg-black bg-opacity-30"}
+            confirmButton="Delete Listing"
+            isOpen={showListingDeleteConfirmation}
+            onConfirm={() => handleListingDelete(listing._id)}
+            onCancel={() => setShowListingDeleteConfirmation(false)}
+            message="Are you sure you want to delete this Listing?"
+         />
+
+
+
       </div>
    );
 }
