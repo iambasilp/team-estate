@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import Listing from "../models/listing.model.js";
 import { errorHandler } from "../utils/error.js";
 
 // ? get all users or search for users by name or email
@@ -45,4 +46,36 @@ const deleteUser = async (req, res, next) => {
    }
 };
 
-export { getUsers, deleteUser };
+// ? get all listing or search for listings by name, description or address
+const getListings = async (req, res, next) => {
+   const { keyword } = req.query;
+
+   try {
+      // ?  if no keyword is provided, return all listings
+      if (!keyword || keyword === "") {
+         const listings = await Listing.find()
+            .select({ _id: 1, name: 1, description: 1, address: 1, userRef: 1 })
+            .sort({ createdAt: -1 });
+
+         res.status(200).json(listings);
+      } else {
+         // ? if keyword is provided, search for listings by name, description or address(sorted by created time)
+         const listings = await Listing.find({
+            $or: [
+               { name: { $regex: new RegExp(keyword, "i") } },
+               { description: { $regex: new RegExp(keyword, "i") } },
+               { address: { $regex: new RegExp(keyword, "i") } },
+            ],
+         })
+            .select({ _id: 1, name: 1, description: 1, address: 1, userRef: 1 })
+            .sort({ createdAt: -1 });
+         console.log(listings);
+
+         res.status(200).json(listings);
+      }
+   } catch (error) {
+      next(error);
+   }
+};
+
+export { getUsers, deleteUser, getListings };
