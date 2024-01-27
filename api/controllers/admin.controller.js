@@ -8,7 +8,9 @@ const getUsers = async (req, res, next) => {
    try {
       // ? if no keyword is provided, return all users
       if (!keyword || keyword === "") {
-         const users = await User.find();
+         const users = await User.find()
+            .select({ _id: 1, username: 1, email: 1, role: 1, avatar: 1, createdAt: 1 })
+            .sort({ createdAt: -1 });
          res.status(200).json(users);
 
          // ? if keyword is provided, search for users by name or email
@@ -86,7 +88,7 @@ const deleteListing = async (req, res, next) => {
    if (!listing) return next(errorHandler(404, "listing not found"));
    try {
       await Listing.findByIdAndDelete(id);
-      res.status(200).json("listing deleted")
+      res.status(200).json("listing deleted");
    } catch (error) {
       next(error);
    }
