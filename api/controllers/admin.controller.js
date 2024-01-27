@@ -78,4 +78,18 @@ const getListings = async (req, res, next) => {
    }
 };
 
-export { getUsers, deleteUser, getListings };
+// ? delete listing by listing id
+const deleteListing = async (req, res, next) => {
+   const { id } = req.params;
+
+   const listing = Listing.findById(id);
+   if (!listing) return next(errorHandler(404, "listing not found"));
+   try {
+      await Listing.findByIdAndDelete(id);
+      res.status(200).json("listing deleted")
+   } catch (error) {
+      next(error);
+   }
+};
+
+export { getUsers, deleteUser, getListings, deleteListing };
