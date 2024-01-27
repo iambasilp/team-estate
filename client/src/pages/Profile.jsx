@@ -300,6 +300,17 @@ export default function Profile() {
             onCancel={() => setShowSignoutConfirmation(false)}
             message="Are you sure you want to sign out?"
          />
+         <ConfirmationModal
+            bgcolor={"bg-black bg-opacity-30"}
+            confirmButton="Delete Listing"
+            isOpen={showListingDeleteConfirmation}
+            onConfirm={() => handleListingDelete(listing._id)}
+            onCancel={() => setShowListingDeleteConfirmation(false)}
+            message="Are you sure you want to delete this Listing?"
+         />
+
+
+
       </div>
    );
 }
