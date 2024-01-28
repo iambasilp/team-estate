@@ -33,13 +33,13 @@ function ContactUs() {
                      href="https://wa.me/911234567890"
                      text="WhatsApp"
                      bgColor="bg-blue-500"
-                     hoverColor="bg-green-600"
+                     hoverColor="bg-blue-600"
                   />
                   <ContactButton
                      href="mailto:something@gmail.com"
                      text="Gmail"
                      bgColor="bg-blue-500"
-                     hoverColor="bg-red-600"
+                     hoverColor="bg-blue-600"
                   />
                </div>
                <div className="flex gap-2 mt-4">
