@@ -1,4 +1,5 @@
 import Listing from "../models/listing.model.js";
+import { checkUser } from "../utils/checkUser.js";
 import { errorHandler } from "../utils/error.js";
 
 export const createListing = async (req, res, next) => {
@@ -63,12 +64,24 @@ export const updateListing = async (req, res, next) => {
 };
 
 export const getListing = async (req, res, next) => {
+   const { id } = req.params;
    try {
-      const listing = await Listing.findById(req.params.id);
-      if (!listing) {
-         return next(errorHandler(404, "Listing not found!"));
+      const listing = await Listing.findById(id);
+      if (!listing) return next(errorHandler(404, "Listing not found!"));
+
+      // ? if listing is not verified, only the owner of the listing or admin can view it
+      if (listing.verified === false) {
+         // ? take the user info from the token
+         const user = await checkUser(req);
+         console.log({ user });
+         if (user?.id === listing.userRef || user?.role === "admin") {
+            res.status(200).json(listing);
+         } else {
+            next(errorHandler(401, "You don't have permission to view this listing!"));
+         }
+      } else {
+         res.status(200).json(listing);
       }
-      res.status(200).json(listing);
    } catch (error) {
       next(error);
    }
