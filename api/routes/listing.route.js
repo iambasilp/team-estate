@@ -7,7 +7,7 @@ import {
    getListings,
    approveListing,
 } from "../controllers/listing.controller.js";
-import { verifyToken } from "../utils/verifyUser.js";
+import { verifyToken } from "../middleware/verifyUser.js";
 import verifyRoles from "../middleware/verifyRoles.js";
 
 const router = express.Router();
