@@ -10,6 +10,22 @@ export const createListing = async (req, res, next) => {
    }
 };
 
+// ? approve listing by listing id
+export const approveListing = async (req, res, next) => {
+   const { id } = req.params;
+   try {
+      const listing = await Listing.findById(id);
+      if (!listing) return next(errorHandler(404, "listing not found"));
+
+      listing.verified = true;
+      await listing.save();
+
+      res.status(200).json({ message: "listing approved", listing });
+   } catch (error) {
+      next(error);
+   }
+};
+
 export const deleteListing = async (req, res, next) => {
    const listing = await Listing.findById(req.params.id);
 
