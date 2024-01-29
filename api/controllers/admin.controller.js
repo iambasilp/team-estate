@@ -48,6 +48,22 @@ const deleteUser = async (req, res, next) => {
    }
 };
 
+// ? promote user to admin
+const promoteUser = async (req, res, next) => {
+   const { id } = req.params;
+   try {
+      const user = await User.findById(id);
+      if (!user) return next(errorHandler(404, "user not found"));
+
+      user.role = "admin";
+      await user.save();
+
+      res.status(200).json(`user: ${user.username} promoted to admin`);
+   } catch (error) {
+      next(error);
+   }
+};
+
 // ? get all listing or search for listings by name, description or address
 const getListings = async (req, res, next) => {
    const { keyword } = req.query;
@@ -69,7 +85,7 @@ const getListings = async (req, res, next) => {
                { address: { $regex: new RegExp(keyword, "i") } },
             ],
          })
-            .select({ _id: 1, name: 1, description: 1, address: 1,verified: 1, userRef: 1 })
+            .select({ _id: 1, name: 1, description: 1, address: 1, verified: 1, userRef: 1 })
             .sort({ createdAt: -1 });
          console.log(listings);
 
@@ -94,4 +110,4 @@ const deleteListing = async (req, res, next) => {
    }
 };
 
-export { getUsers, deleteUser, getListings, deleteListing };
+export { getUsers, deleteUser, promoteUser, getListings, deleteListing };
