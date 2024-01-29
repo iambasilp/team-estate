@@ -122,7 +122,12 @@ export const getListings = async (req, res, next) => {
       const order = req.query.order || "desc";
 
       const listings = await Listing.find({
-         name: { $regex: searchTerm, $options: "i" },
+         $or: [
+            { name: { $regex: new RegExp(searchTerm, "i") } },
+            { description: { $regex: new RegExp(searchTerm, "i") } },
+            { address: { $regex: new RegExp(searchTerm, "i") } },
+         ],
+         verified: true,
          offer,
          furnished,
          parking,
