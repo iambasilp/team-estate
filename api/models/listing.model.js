@@ -50,6 +50,10 @@ const listingSchema = new mongoose.Schema(
          type: Array,
          required: true,
       },
+      verified: {
+         type: Boolean,
+         default: false,
+      },
       userRef: {
          type: String,
          required: true,
