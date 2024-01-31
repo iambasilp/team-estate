@@ -19,6 +19,7 @@ import styles from "./style";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
 import PropertieCards from "./pages/PropertieCards";
+import Testimonials from "./pages/Testimonials";
 import Team from "./pages/Team/Team";
 import Footer from "./components/Footer";
 import Services from "./pages/Services";
@@ -54,6 +55,7 @@ export default function App() {
                <Route path="/about" element={<About />} />
                <Route path="/services" element={<Services />} />
                <Route path="/properties" element={<PropertieCards />} />
+               <Route path="/testimonials" element={<Testimonials />} />
                <Route path="/team" element={<Team />} />
                <Route path="/faq" element={<FAQ />} />
                <Route path="/sign-in" element={<SignIn />} />
