@@ -132,35 +132,41 @@ export const testimonialData = [
    {
       name: "Basil",
       photo: basilPhoto,
+      rating: 4,
       testimonial:
          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
    },
    {
       name: "john",
       photo: basilPhoto,
+      rating: 5,
       testimonial:
          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
    },
    {
       name: "raj",
       photo: basilPhoto,
+      rating: 5,
       testimonial:
          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
    },
    {
       name: "ameen",
-      photo: basilPhoto,
+      photo: basilPhoto,  
+      rating: 4,
       testimonial:
          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
    },
    {
       name: "mubarak",
       photo: basilPhoto,
+      rating: 4,
       testimonial:
          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
    },
    {
       name: "sinan",
+      rating: 5,
       photo: basilPhoto,
       testimonial:
          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
@@ -168,6 +174,7 @@ export const testimonialData = [
    {
       name: "yadhav",
       photo: basilPhoto,
+      rating: 4,
       testimonial:
          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
    },
