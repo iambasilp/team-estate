@@ -2,6 +2,7 @@ import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 import linkedin from "../assets/linkedin.svg";
 import twitter from "../assets/twitter.svg";
+import basilPhoto from "../assets/developer/basil.png";
 
 export const navLinks = [
    {
@@ -125,4 +126,51 @@ export const socialMedia = [
       icon: linkedin,
       link: "https://www.linkedin.com/",
    },
+];
+
+export const testimonialData = [
+   {
+      name: "Basil",
+      photo: basilPhoto,
+      testimonial:
+         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "john",
+      photo: basilPhoto,
+      testimonial:
+         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "raj",
+      photo: basilPhoto,
+      testimonial:
+         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "ameen",
+      photo: basilPhoto,
+      testimonial:
+         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "mubarak",
+      photo: basilPhoto,
+      testimonial:
+         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "sinan",
+      photo: basilPhoto,
+      testimonial:
+         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "yadhav",
+      photo: basilPhoto,
+      testimonial:
+         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   
+   
 ];
