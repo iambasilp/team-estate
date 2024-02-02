@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useRef, useState, useEffect } from "react";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaSignOutAlt, FaTrash, FaEye,} from "react-icons/fa";
 import { app } from "../firebase";
 import {
    updateUserStart,
@@ -133,6 +133,10 @@ export default function Profile() {
             setShowListingsError(true);
             return;
          }
+         if (data.length === 0) {
+            console.log("No listings found");
+            return;
+         }
 
          setUserListings(data);
       } catch (error) {
@@ -157,7 +161,7 @@ export default function Profile() {
       }
    };
 
-   //confirmation message when sign out and delete account
+   //confirmation message when sign out,delete listing and delete account
    const [showSignoutConfirmation, setShowSignoutConfirmation] = useState(false);
    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
    const handleDeleteUserConfirmation = () => {
@@ -175,9 +179,9 @@ export default function Profile() {
    };
 
    return (
-      <div className="p-3 max-w-lg mx-auto">
-         <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
-         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <div className="mt-24 max-w-lg mx-auto">
+         <h1 className="text-3xl font-semibold my-7 text-center">Profile</h1>
+         <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <input onChange={(e) => setFile(e.target.files[0])} type="file" ref={fileRef} hidden accept="image/*" />
             <img
                onClick={() => fileRef.current.click()}
@@ -196,13 +200,7 @@ export default function Profile() {
                   ""
                )}
             </p>
-            <div
-               onClick={handleDisable}
-               className="flex items-center gap-2  self-center hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
-            >
-               <p>Edit</p>
-               <FaEdit />
-            </div>
+            <p className="pt-4 font-semibold text-gray-700">USER NAME</p>
             <input
                disabled={isDisabled}
                type="text"
@@ -212,6 +210,7 @@ export default function Profile() {
                className="border p-3 rounded-lg"
                onChange={handleChange}
             />
+            <p className="pt-4 font-semibold text-gray-700">EMAIL</p>
             <input
                disabled={isDisabled}
                type="email"
@@ -221,6 +220,9 @@ export default function Profile() {
                className="border p-3 rounded-lg"
                onChange={handleChange}
             />
+            <p hidden={isDisabled} className="pt-4 font-semibold text-gray-700">
+               PASSWORD
+            </p>
             <input
                hidden={isDisabled}
                type="password"
@@ -232,31 +234,54 @@ export default function Profile() {
             <button
                hidden={isDisabled}
                disabled={loading}
-               className="bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white p-3 border border-blue-500 hover:border-transparent rounded-lg"
+               className="bg-blue-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
             >
                {loading ? "Loading..." : "UPDATE"}
             </button>
+            <div className="flex justify-between gap-2 pt-3">
+               <div className="flex flex-col gap-2">
+                  <div
+                     onClick={handleDisable}
+                     className="w-40 flex items-center gap-2 self-start hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
+                  >
+                     <p>Edit</p>
+                     <FaEdit />
+                  </div>
+                  <div
+                     onClick={handleShowListings}
+                     className="w-40 flex items-center gap-2 self-start hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
+                  >
+                     <p>Show Listings</p>
+                     <FaEye />
+                  </div>
+               </div>
+               <div className="flex flex-col gap-2">
+                  <div
+                     onClick={handleSignoutConfirmation}
+                     className="w-44 flex items-center gap-2  self-end hover:cursor-pointer bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white px-4 border border-orange-500 hover:border-transparent rounded"
+                  >
+                     <p>Sign out</p>
+                     <FaSignOutAlt />
+                  </div>
+                  <div
+                     onClick={handleDeleteUserConfirmation}
+                     className="w-44 flex items-center gap-2  self-end hover:cursor-pointer bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white px-4 border border-red-500 hover:border-transparent rounded"
+                  >
+                     <p>Delete account</p>
+                     <FaTrash />
+                  </div>
+               </div>
+            </div>
             <Link
-               className="bg-transparent hover:bg-green-800 text-green-700 font-semibold hover:text-white p-3 border border-green-600 hover:border-transparent rounded-lg text-center"
+               className="bg-green-700 text-white p-3 mt-5 rounded-lg uppercase text-center hover:opacity-95"
                to={"/create-listing"}
             >
                CREATE LISTING
             </Link>
          </form>
-         <div className="flex justify-between mt-5">
-            <span onClick={handleDeleteUserConfirmation} className="text-red-700 cursor-pointer">
-               Delete account
-            </span>
-            <span onClick={handleSignoutConfirmation} className="text-red-700 cursor-pointer">
-               Sign out
-            </span>
-         </div>
 
          <p className="text-red-700 mt-5">{error ? error : ""}</p>
          <p className="text-green-700 mt-5">{updateSuccess ? "User is updated successfully!" : ""}</p>
-         <button onClick={handleShowListings} className="text-green-700 w-full">
-            Show Listings
-         </button>
          <p className="text-red-700 mt-5">{showListingsError ? "Error showing listings" : ""}</p>
 
          {userListings && userListings.length > 0 && (
