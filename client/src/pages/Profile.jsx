@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useRef, useState, useEffect } from "react";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
-import { FaEdit, FaSignOutAlt, FaTrash, FaEye,} from "react-icons/fa";
+import { FaEdit, FaSignOutAlt, FaTrash, FaEye } from "react-icons/fa";
 import { app } from "../firebase";
 import {
    updateUserStart,
@@ -164,12 +164,18 @@ export default function Profile() {
    //confirmation message when sign out,delete listing and delete account
    const [showSignoutConfirmation, setShowSignoutConfirmation] = useState(false);
    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+   const [showDeleteListingConfirmation, setShowDeleteListingConfirmation] = useState(false);
+
    const handleDeleteUserConfirmation = () => {
       setShowDeleteConfirmation(true);
    };
 
    const handleSignoutConfirmation = () => {
       setShowSignoutConfirmation(true);
+   };
+
+   const handleDeleteListingConfirmation = () => {
+      setShowDeleteListingConfirmation(true);
    };
 
    const [isDisabled, setIsDisabled] = useState(true);
@@ -238,6 +244,12 @@ export default function Profile() {
             >
                {loading ? "Loading..." : "UPDATE"}
             </button>
+            <Link
+               className="bg-slate-700 text-white p-3 mt-5 rounded-lg uppercase text-center hover:opacity-95"
+               to={"/create-listing"}
+            >
+               CREATE LISTING
+            </Link>
             <div className="flex justify-between gap-2 pt-3">
                <div className="flex flex-col gap-2">
                   <div
@@ -272,12 +284,7 @@ export default function Profile() {
                   </div>
                </div>
             </div>
-            <Link
-               className="bg-green-700 text-white p-3 mt-5 rounded-lg uppercase text-center hover:opacity-95"
-               to={"/create-listing"}
-            >
-               CREATE LISTING
-            </Link>
+            
          </form>
 
          <p className="text-red-700 mt-5">{error ? error : ""}</p>
@@ -300,13 +307,35 @@ export default function Profile() {
                      </Link>
 
                      <div className="flex flex-col item-center">
-                        <button onClick={() => handleListingDelete(listing._id)} className="text-red-700 uppercase">
+                        <button onClick={handleDeleteListingConfirmation} className="text-red-700 uppercase">
                            Delete
                         </button>
                         <Link to={`/update-listing/${listing._id}`}>
                            <button className="text-green-700 uppercase">Edit</button>
                         </Link>
                      </div>
+                     {/* confirmation box for delete listing */}
+                     {showDeleteListingConfirmation && (
+                        <div className="fixed w-full h-full flex items-center justify-center left-0 top-0 bg-black bg-opacity-50">
+                           <div className="bg-white p-4 rounded-md">
+                              <p>Are you sure you want to delete this listing?</p>
+                              <div className="flex justify-end mt-3">
+                                 <button
+                                    onClick={() => handleListingDelete(listing._id)}
+                                    className="bg-red-700 text-white p-2 rounded-lg mr-2"
+                                 >
+                                    Delete Listing
+                                 </button>
+                                 <button
+                                    onClick={() => setShowDeleteListingConfirmation(false)}
+                                    className="bg-gray-300 text-gray-700 p-2 rounded-lg"
+                                 >
+                                    No
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     )}
                   </div>
                ))}
             </div>
