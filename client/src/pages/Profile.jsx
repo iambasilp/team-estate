@@ -198,7 +198,7 @@ export default function Profile() {
             </p>
             <div
                onClick={handleDisable}
-               className="flex items-center gap-2  self-center hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+               className="flex items-center gap-2  self-center hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
             >
                <p>Edit</p>
                <FaEdit />
@@ -232,15 +232,15 @@ export default function Profile() {
             <button
                hidden={isDisabled}
                disabled={loading}
-               className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+               className="bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white p-3 border border-blue-500 hover:border-transparent rounded-lg"
             >
-               {loading ? "Loading..." : "Update"}
+               {loading ? "Loading..." : "UPDATE"}
             </button>
             <Link
-               className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+               className="bg-transparent hover:bg-green-800 text-green-700 font-semibold hover:text-white p-3 border border-green-600 hover:border-transparent rounded-lg text-center"
                to={"/create-listing"}
             >
-               Create Listing
+               CREATE LISTING
             </Link>
          </form>
          <div className="flex justify-between mt-5">
