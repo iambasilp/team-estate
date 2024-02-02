@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useRef, useState, useEffect } from "react";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
-import { FaEdit, FaSignOutAlt, FaTrash, FaEye } from "react-icons/fa";
+import { FaEdit, FaSignOutAlt, FaTrash, FaEye, FaUpload, FaTrashAlt } from "react-icons/fa";
 import { app } from "../firebase";
 import {
    updateUserStart,
@@ -11,6 +11,8 @@ import {
    deleteUserStart,
    deleteUserSuccess,
    signOutUserStart,
+   signOutUserSuccess,
+   signOutUserFailure,
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -60,6 +62,13 @@ export default function Profile() {
             );
          },
       );
+   };
+
+   const handleRemoveProfilePhoto = () => {
+      setFormData({
+         ...formData,
+         avatar: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+      });
    };
 
    const handleChange = (e) => {
@@ -118,9 +127,9 @@ export default function Profile() {
             dispatch(deleteUserFailure(data.message));
             return;
          }
-         dispatch(deleteUserSuccess(data));
+         dispatch(signOutUserSuccess(data));
       } catch (error) {
-         dispatch(deleteUserFailure(data.message));
+         dispatch(signOutUserFailure(data.message));
       }
    };
 
@@ -146,6 +155,7 @@ export default function Profile() {
 
    const handleListingDelete = async (listingId) => {
       try {
+         setShowDeleteListingConfirmation(false);
          const res = await fetch(`/api/listing/delete/${listingId}`, {
             method: "DELETE",
          });
@@ -190,11 +200,26 @@ export default function Profile() {
          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <input onChange={(e) => setFile(e.target.files[0])} type="file" ref={fileRef} hidden accept="image/*" />
             <img
-               onClick={() => fileRef.current.click()}
                src={formData.avatar || currentUser.avatar}
                alt="profile"
-               className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2"
+               className="rounded-full h-24 w-24 object-cover self-center mt-2"
             />
+            <div hidden={isDisabled} className="self-center ">
+               <button
+                  type="button"
+                  onClick={() => fileRef.current.click()}
+                  className="bg-blue-700 text-white p-3 m-2 rounded-lg uppercase text-center hover:opacity-95"
+               >
+                  <FaUpload />
+               </button>
+               <button
+                  type="button"
+                  onClick={handleRemoveProfilePhoto}
+                  className="bg-gray-500 text-white p-3 m-2 rounded-lg uppercase text-center hover:opacity-95"
+               >
+                  <FaTrashAlt />
+               </button>
+            </div>
             <p className="text-sm self-center">
                {fileUploadError ? (
                   <span className="text-red-700">Error Image upload (image must be less than 2 mb)</span>
@@ -284,7 +309,6 @@ export default function Profile() {
                   </div>
                </div>
             </div>
-            
          </form>
 
          <p className="text-red-700 mt-5">{error ? error : ""}</p>
