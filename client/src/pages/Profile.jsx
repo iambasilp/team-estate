@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useRef, useState, useEffect } from "react";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
+import { FaEdit } from "react-icons/fa";
 import { app } from "../firebase";
 import {
    updateUserStart,
@@ -166,6 +167,13 @@ export default function Profile() {
    const handleSignoutConfirmation = () => {
       setShowSignoutConfirmation(true);
    };
+
+   const [isDisabled, setIsDisabled] = useState(true);
+
+   const handleDisable = () => {
+      setIsDisabled(!isDisabled);
+   };
+
    return (
       <div className="p-3 max-w-lg mx-auto">
          <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
@@ -188,7 +196,15 @@ export default function Profile() {
                   ""
                )}
             </p>
+            <div
+               onClick={handleDisable}
+               className="flex items-center gap-2  self-center hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+            >
+               <p>Edit</p>
+               <FaEdit />
+            </div>
             <input
+               disabled={isDisabled}
                type="text"
                placeholder="username"
                defaultValue={currentUser.username}
@@ -197,6 +213,7 @@ export default function Profile() {
                onChange={handleChange}
             />
             <input
+               disabled={isDisabled}
                type="email"
                placeholder="email"
                id="email"
@@ -205,6 +222,7 @@ export default function Profile() {
                onChange={handleChange}
             />
             <input
+               hidden={isDisabled}
                type="password"
                placeholder="password"
                onChange={handleChange}
@@ -212,6 +230,7 @@ export default function Profile() {
                className="border p-3 rounded-lg"
             />
             <button
+               hidden={isDisabled}
                disabled={loading}
                className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
             >
