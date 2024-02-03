@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useRef, useState, useEffect } from "react";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
+import { FaEdit, FaSignOutAlt, FaTrash, FaEye, FaUpload, FaTrashAlt } from "react-icons/fa";
 import { app } from "../firebase";
 import {
    updateUserStart,
@@ -10,6 +11,8 @@ import {
    deleteUserStart,
    deleteUserSuccess,
    signOutUserStart,
+   signOutUserSuccess,
+   signOutUserFailure,
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -59,6 +62,13 @@ export default function Profile() {
             );
          },
       );
+   };
+
+   const handleRemoveProfilePhoto = () => {
+      setFormData({
+         ...formData,
+         avatar: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+      });
    };
 
    const handleChange = (e) => {
@@ -117,9 +127,9 @@ export default function Profile() {
             dispatch(deleteUserFailure(data.message));
             return;
          }
-         dispatch(deleteUserSuccess(data));
+         dispatch(signOutUserSuccess(data));
       } catch (error) {
-         dispatch(deleteUserFailure(data.message));
+         dispatch(signOutUserFailure(data.message));
       }
    };
 
@@ -132,6 +142,10 @@ export default function Profile() {
             setShowListingsError(true);
             return;
          }
+         if (data.length === 0) {
+            console.log("No listings found");
+            return;
+         }
 
          setUserListings(data);
       } catch (error) {
@@ -141,6 +155,7 @@ export default function Profile() {
 
    const handleListingDelete = async (listingId) => {
       try {
+         setShowDeleteListingConfirmation(false);
          const res = await fetch(`/api/listing/delete/${listingId}`, {
             method: "DELETE",
          });
@@ -156,9 +171,11 @@ export default function Profile() {
       }
    };
 
-   //confirmation message when sign out and delete account
+   //confirmation message when sign out,delete listing and delete account
    const [showSignoutConfirmation, setShowSignoutConfirmation] = useState(false);
    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+   const [showDeleteListingConfirmation, setShowDeleteListingConfirmation] = useState(false);
+
    const handleDeleteUserConfirmation = () => {
       setShowDeleteConfirmation(true);
    };
@@ -166,17 +183,43 @@ export default function Profile() {
    const handleSignoutConfirmation = () => {
       setShowSignoutConfirmation(true);
    };
+
+   const handleDeleteListingConfirmation = () => {
+      setShowDeleteListingConfirmation(true);
+   };
+
+   const [isDisabled, setIsDisabled] = useState(true);
+
+   const handleDisable = () => {
+      setIsDisabled(!isDisabled);
+   };
+
    return (
-      <div className="p-3 max-w-lg mx-auto">
-         <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
-         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <div className="mt-24 max-w-lg mx-auto">
+         <h1 className="text-3xl font-semibold my-7 text-center">Profile</h1>
+         <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <input onChange={(e) => setFile(e.target.files[0])} type="file" ref={fileRef} hidden accept="image/*" />
             <img
-               onClick={() => fileRef.current.click()}
                src={formData.avatar || currentUser.avatar}
                alt="profile"
-               className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2"
+               className="rounded-full h-24 w-24 object-cover self-center mt-2"
             />
+            <div hidden={isDisabled} className="self-center ">
+               <button
+                  type="button"
+                  onClick={() => fileRef.current.click()}
+                  className="bg-blue-700 text-white p-3 m-2 rounded-lg uppercase text-center hover:opacity-95"
+               >
+                  <FaUpload />
+               </button>
+               <button
+                  type="button"
+                  onClick={handleRemoveProfilePhoto}
+                  className="bg-gray-500 text-white p-3 m-2 rounded-lg uppercase text-center hover:opacity-95"
+               >
+                  <FaTrashAlt />
+               </button>
+            </div>
             <p className="text-sm self-center">
                {fileUploadError ? (
                   <span className="text-red-700">Error Image upload (image must be less than 2 mb)</span>
@@ -188,7 +231,9 @@ export default function Profile() {
                   ""
                )}
             </p>
+            <p className="pt-4 font-semibold text-gray-700">USER NAME</p>
             <input
+               disabled={isDisabled}
                type="text"
                placeholder="username"
                defaultValue={currentUser.username}
@@ -196,7 +241,9 @@ export default function Profile() {
                className="border p-3 rounded-lg"
                onChange={handleChange}
             />
+            <p className="pt-4 font-semibold text-gray-700">EMAIL</p>
             <input
+               disabled={isDisabled}
                type="email"
                placeholder="email"
                id="email"
@@ -204,7 +251,11 @@ export default function Profile() {
                className="border p-3 rounded-lg"
                onChange={handleChange}
             />
+            <p hidden={isDisabled} className="pt-4 font-semibold text-gray-700">
+               PASSWORD
+            </p>
             <input
+               hidden={isDisabled}
                type="password"
                placeholder="password"
                onChange={handleChange}
@@ -212,32 +263,56 @@ export default function Profile() {
                className="border p-3 rounded-lg"
             />
             <button
+               hidden={isDisabled}
                disabled={loading}
-               className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+               className="bg-blue-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
             >
-               {loading ? "Loading..." : "Update"}
+               {loading ? "Loading..." : "UPDATE"}
             </button>
             <Link
-               className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+               className="bg-slate-700 text-white p-3 mt-5 rounded-lg uppercase text-center hover:opacity-95"
                to={"/create-listing"}
             >
-               Create Listing
+               CREATE LISTING
             </Link>
+            <div className="flex justify-between gap-2 pt-3">
+               <div className="flex flex-col gap-2">
+                  <div
+                     onClick={handleDisable}
+                     className="w-40 flex items-center gap-2 self-start hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
+                  >
+                     <p>Edit</p>
+                     <FaEdit />
+                  </div>
+                  <div
+                     onClick={handleShowListings}
+                     className="w-40 flex items-center gap-2 self-start hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
+                  >
+                     <p>Show Listings</p>
+                     <FaEye />
+                  </div>
+               </div>
+               <div className="flex flex-col gap-2">
+                  <div
+                     onClick={handleSignoutConfirmation}
+                     className="w-44 flex items-center gap-2  self-end hover:cursor-pointer bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white px-4 border border-orange-500 hover:border-transparent rounded"
+                  >
+                     <p>Sign out</p>
+                     <FaSignOutAlt />
+                  </div>
+                  <div
+                     onClick={handleDeleteUserConfirmation}
+                     className="w-44 flex items-center gap-2  self-end hover:cursor-pointer bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white px-4 border border-red-500 hover:border-transparent rounded"
+                  >
+                     <p>Delete account</p>
+                     <FaTrash />
+                  </div>
+               </div>
+            </div>
          </form>
-         <div className="flex justify-between mt-5">
-            <span onClick={handleDeleteUserConfirmation} className="text-red-700 cursor-pointer">
-               Delete account
-            </span>
-            <span onClick={handleSignoutConfirmation} className="text-red-700 cursor-pointer">
-               Sign out
-            </span>
-         </div>
 
          <p className="text-red-700 mt-5">{error ? error : ""}</p>
          <p className="text-green-700 mt-5">{updateSuccess ? "User is updated successfully!" : ""}</p>
-         <button onClick={handleShowListings} className="text-green-700 w-full">
-            Show Listings
-         </button>
          <p className="text-red-700 mt-5">{showListingsError ? "Error showing listings" : ""}</p>
 
          {userListings && userListings.length > 0 && (
@@ -256,13 +331,35 @@ export default function Profile() {
                      </Link>
 
                      <div className="flex flex-col item-center">
-                        <button onClick={() => handleListingDelete(listing._id)} className="text-red-700 uppercase">
+                        <button onClick={handleDeleteListingConfirmation} className="text-red-700 uppercase">
                            Delete
                         </button>
                         <Link to={`/update-listing/${listing._id}`}>
                            <button className="text-green-700 uppercase">Edit</button>
                         </Link>
                      </div>
+                     {/* confirmation box for delete listing */}
+                     {showDeleteListingConfirmation && (
+                        <div className="fixed w-full h-full flex items-center justify-center left-0 top-0 bg-black bg-opacity-50">
+                           <div className="bg-white p-4 rounded-md">
+                              <p>Are you sure you want to delete this listing?</p>
+                              <div className="flex justify-end mt-3">
+                                 <button
+                                    onClick={() => handleListingDelete(listing._id)}
+                                    className="bg-red-700 text-white p-2 rounded-lg mr-2"
+                                 >
+                                    Delete Listing
+                                 </button>
+                                 <button
+                                    onClick={() => setShowDeleteListingConfirmation(false)}
+                                    className="bg-gray-300 text-gray-700 p-2 rounded-lg"
+                                 >
+                                    No
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     )}
                   </div>
                ))}
             </div>
