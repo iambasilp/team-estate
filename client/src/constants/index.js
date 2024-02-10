@@ -2,6 +2,7 @@ import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 import linkedin from "../assets/linkedin.svg";
 import twitter from "../assets/twitter.svg";
+import basilPhoto from "../assets/developer/basil.png";
 
 export const navLinks = [
    {
@@ -124,5 +125,56 @@ export const socialMedia = [
       id: "social-media-4",
       icon: linkedin,
       link: "https://www.linkedin.com/",
+   },
+];
+
+export const testimonialData = [
+   {
+      name: "Basil",
+      photo: basilPhoto,
+      rating: 4,
+      testimonial:
+         "cidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "john",
+      photo: basilPhoto,
+      rating: 5,
+      testimonial: "tur recusandae ab saepe illo est quia obcaecati neque quibusdam ei",
+   },
+   {
+      name: "raj",
+      photo: basilPhoto,
+      rating: 5,
+      testimonial:
+         "Lonsectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "ameen",
+      photo: basilPhoto,
+      rating: 4,
+      testimonial:
+         " quibusdam etque voluptates magnam!",
+   },
+   {
+      name: "mubarak",
+      photo: basilPhoto,
+      rating: 4,
+      testimonial:
+         "Lorem ipspisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "sinan",
+      rating: 5,
+      photo: basilPhoto,
+      testimonial:
+         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+   },
+   {
+      name: "yadhav",
+      photo: basilPhoto,
+      rating: 4,
+      testimonial:
+         "Loreicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
    },
 ];
