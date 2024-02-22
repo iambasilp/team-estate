@@ -19,6 +19,10 @@ import Team from "./pages/Team/Team";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
 import FAQ from "./pages/Faq";
+import AdminLayout from "./pages/Admin/AdminLayout";
+import AdminHome from "./pages/Admin/admin.pages/Home";
+import AdminListings from "./pages/Admin/admin.pages/Listings";
+import AdminUsers from "./pages/Admin/admin.pages/Users";
 import Layout from "./container/Layout";
 
 // Main App component
@@ -48,6 +52,12 @@ export default function App() {
                      <Route path="/create-listing" element={<CreateListing />} />
                      <Route path="/update-listing/:listingId" element={<UpdateListing />} />
                   </Route>
+               </Route>
+               {/* Admin pages */}
+               <Route path="/admin" element={<AdminLayout />}>
+                  <Route index element={<AdminHome />} />
+                  <Route path="listings" element={<AdminListings />} />
+                  <Route path="users" element={<AdminUsers />} />
                </Route>
             </Routes>
          </BrowserRouter>
