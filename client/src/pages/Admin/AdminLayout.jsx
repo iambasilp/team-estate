@@ -1,9 +1,14 @@
-import React from 'react'
+import { Outlet } from "react-router-dom";
+import Sidebar from "./admin.containers/Sidebar";
 
 function AdminLayout() {
-  return (
-    <div>AdminLayout</div>
-  )
+   const style = {};
+   return (
+      <div>
+         <Sidebar />
+         <Outlet />
+      </div>
+   );
 }
 
-export default AdminLayout
+export default AdminLayout;
