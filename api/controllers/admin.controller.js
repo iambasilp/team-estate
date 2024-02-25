@@ -74,8 +74,8 @@ const getListings = async (req, res, next) => {
       // ?  if no keyword is provided, return all listings
       if (!keyword || keyword === "") {
          const listings = await Listing.find()
-            .select({ _id: 1, name: 1, description: 1, address: 1, verified: 1, userRef: 1 })
-            .sort({ createdAt: -1 });
+            .select({ _id: 1, name: 1, description: 1, address: 1, createdAt: 1, verified: 1, userRef: 1 })
+            .sort({ verified: 1, createdAt: -1 });
 
          res.status(200).json(listings);
       } else {
@@ -87,8 +87,8 @@ const getListings = async (req, res, next) => {
                { address: { $regex: new RegExp(keyword, "i") } },
             ],
          })
-            .select({ _id: 1, name: 1, description: 1, address: 1, verified: 1, userRef: 1 })
-            .sort({ createdAt: -1 });
+            .select({ _id: 1, name: 1, description: 1, address: 1, createdAt: 1, verified: 1, userRef: 1 })
+            .sort({ verified: 1, createdAt: -1 });
          console.log(listings);
 
          res.status(200).json(listings);
