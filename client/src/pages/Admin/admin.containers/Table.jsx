@@ -11,7 +11,7 @@ import { FiRefreshCcw } from "react-icons/fi";
 import TableNavigation from "../admin.components/TableNavigation";
 import SortSelect from "../admin.components/SortSelect";
 
-function Table({ columns, endpoint, refreshCount, setRefreshCount }) {
+function Table({ columns, endpoint, refreshCount, setRefreshCount, sortProps }) {
    const [data, setData] = useState("");
    const [filterText, setFilterText] = useState("");
    const [sorting, setSorting] = useState(false);
@@ -72,8 +72,8 @@ function Table({ columns, endpoint, refreshCount, setRefreshCount }) {
                      </button>
                      {/* sort select component comes here */}
                      <SortSelect
-                        options={["verified", "unverified"]}
-                        sortColumnKey={"verified"}
+                        options={sortProps.options}
+                        sortColumnKey={sortProps.sortColumnKey}
                         sorting={sorting}
                         setSorting={setSorting}
                      />

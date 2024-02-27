@@ -83,7 +83,13 @@ function Listings() {
    return (
       <div className="py-4 px-6">
          <h1 className=" font-semibold text-2xl">Listings</h1>
-         <Table columns={columns} endpoint={"listings"} refreshCount={refreshCount} setRefreshCount={setRefreshCount} />
+         <Table
+            columns={columns}
+            endpoint={"listings"}
+            sortProps={{ options: ["verified", "unverified"], sortColumnKey: "verified" }}
+            refreshCount={refreshCount}
+            setRefreshCount={setRefreshCount}
+         />
       </div>
    );
 }
