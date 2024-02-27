@@ -7,7 +7,7 @@ function AdminLayout() {
          <div className="fixed h-full w-64">
             <Sidebar />
          </div>
-         <div className="flex-grow ml-64">
+         <div className="flex-grow ml-64 max-w-[calc(100vw-16rem)]">
             <Outlet />
          </div>
       </div>
