@@ -3,22 +3,11 @@ import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { DateTime } from "luxon";
 import Table from "../admin.containers/Table";
+import { handleAdminButtonReq } from "../../../utils/admin";
 
 function Listings() {
    // ? this state is used to refresh the table
    const [refreshCount, setRefreshCount] = useState(0);
-
-   const handleAdminButtonReq = async (id, url, method) => {
-      try {
-         const res = await fetch(`/api/${url}/${id}`, {
-            method: method,
-         });
-         const data = await res.json();
-         setRefreshCount((prev) => prev + 1);
-      } catch (error) {
-         console.error(error);
-      }
-   };
 
    const columns = [
       {
@@ -71,7 +60,7 @@ function Listings() {
                   <button
                      key={1}
                      className="text-white bg-red-500 ml-2 px-2 py-1 rounded-md"
-                     onClick={() => handleAdminButtonReq(row.original._id, "admin/listings", "DELETE")}
+                     onClick={() => handleAdminButtonReq(row.original._id, "admin/listings", "DELETE", setRefreshCount)}
                   >
                      Delete
                   </button>
@@ -79,7 +68,9 @@ function Listings() {
                      <button
                         key={2}
                         className="text-white bg-blue-500 ml-2 px-2 py-1 rounded-md"
-                        onClick={() => handleAdminButtonReq(row.original._id, "listing/approve", "PUT")}
+                        onClick={() =>
+                           handleAdminButtonReq(row.original._id, "listing/approve", "PUT", setRefreshCount)
+                        }
                      >
                         Verify
                      </button>
