@@ -24,6 +24,7 @@ import AdminHome from "./pages/Admin/admin.pages/Home";
 import AdminListings from "./pages/Admin/admin.pages/Listings";
 import AdminUsers from "./pages/Admin/admin.pages/Users";
 import Layout from "./container/Layout";
+import PageNotFound from "./pages/PageNotFound";
 
 // Main App component
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
             <Routes>
                {/* Pages with nav and footer */}
                <Route path="/" element={<Layout />}>
+               <Route path="*" element={<PageNotFound />} />
                   <Route index element={<Home />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/about" element={<About />} />
