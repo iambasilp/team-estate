@@ -39,18 +39,18 @@ export default function Home() {
 
                <div className="flex flex-col justify-center items-center sm:items-start">
                   <h1 className="font-poppins font-semibold text-[52px] sm:text-[72px] xl:text-[90px] 2xl:text-[120px] text-slate-700 leading-[75px] sm:leading-[100px] ">
-                     Find your <br className="sm:block hidden" />
-                     <span className="blue-gradient-text">Next perfect</span>
+                     Discover Your <br className="sm:block hidden" />
+                     <span className="blue-gradient-text">Dream Home</span>
                   </h1>
 
                   <h1 className="font-poppins font-semibold text-[40px] sm:text-[68px] xl:text-[86px] 2xl:text-[104px] text-slate-700 leading-[75px] sm:leading-[100px] w-full">
-                     Place with ease
+                     Today
                   </h1>
                </div>
 
                <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-                  Bnas, your trusted partner in real estate, offers top-notch services for buying and selling
-                  properties, ensuring a seamless and satisfying experience for our valued clients.
+                  Bnas, Your Reliable Real Estate Partner, offers Exceptional Services for Buying and Selling
+                  Properties, Ensuring Satisfaction Every Step of the Way.
                </p>
                <div className="mt-6 flex flex-row  items-center justify-center gap-3 ">
                   <form onSubmit={handleSubmit} className="relative ">
