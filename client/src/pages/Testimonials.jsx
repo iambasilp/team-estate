@@ -10,7 +10,7 @@ const Testimonials = () => {
 
             <div className="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8">
                {testimonialData.map((person) => (
-                  <div className="mb-8 sm:break-inside-avoid">
+                  <div className="mb-8 sm:break-inside-avoid" key={person.name}>
                      <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                         <div className="flex items-center gap-4">
                            <img alt="Man" src={person.photo} className="h-14 w-14 rounded-full object-cover" />
@@ -19,6 +19,7 @@ const Testimonials = () => {
                               <div className="flex justify-center gap-0.5 text-blue-500">
                                  {Array.from({ length: person.rating }, (_, i) => (
                                     <svg
+                                       key={i}
                                        xmlns="http://www.w3.org/2000/svg"
                                        className="h-5 w-5"
                                        viewBox="0 0 20 20"
