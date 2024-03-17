@@ -6,11 +6,11 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 const firebaseConfig = {
    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-   authDomain: "team-estate.firebaseapp.com",
-   projectId: "team-estate",
-   storageBucket: "team-estate.appspot.com",
-   messagingSenderId: "438591216005",
-   appId: "1:438591216005:web:4dccd2334a9a2a94520cec",
+   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
