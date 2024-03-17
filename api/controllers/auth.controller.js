@@ -36,7 +36,7 @@ export const google = async (req, res, next) => {
    try {
       const user = await User.findOne({ email: req.body.email });
       if (user) {
-         const token = jwt.sign({ id: user._id, role: validUser.role }, process.env.JWT_SECRET);
+         const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET);
          const { password: pass, ...rest } = user._doc;
          res.cookie("access_token", token, { httpOnly: true }).status(200).json(rest);
       } else {
@@ -49,7 +49,7 @@ export const google = async (req, res, next) => {
             avatar: req.body.photo,
          });
          await newUser.save();
-         const token = jwt.sign({ id: newUser._id, role: validUser.role }, process.env.JWT_SECRET);
+         const token = jwt.sign({ id: newUser._id, role: newUser.role }, process.env.JWT_SECRET);
          const { password: pass, ...rest } = newUser._doc;
          res.cookie("access_token", token, { httpOnly: true }).status(200).json(rest);
       }
