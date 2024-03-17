@@ -16,8 +16,7 @@ const Footer = () => {
         </div>
 
         <p className="mt-4 max-w-xs text-gray-500">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam
-          molestias.
+        Your trusted partner in real estate. Explore our range of services for buying and selling properties. Contact us for a seamless experience tailored to your needs
         </p>
 
         <ul className="mt-8 flex gap-6">
@@ -143,38 +142,21 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
-          <p className="font-medium text-gray-900">Company</p>
-
-          <ul className="mt-6 space-y-4 text-sm">
-            <li>
-              <a href="#" className="text-gray-700 transition hover:opacity-75"> About </a>
-            </li>
-
-            <li>
-              <a href="#" className="text-gray-700 transition hover:opacity-75"> Meet the Team </a>
-            </li>
-
-            <li>
-              <a href="#" className="text-gray-700 transition hover:opacity-75"> Accounts Review </a>
-            </li>
-          </ul>
-        </div>
 
         <div>
           <p className="font-medium text-gray-900">Helpful Links</p>
 
           <ul className="mt-6 space-y-4 text-sm">
             <li>
-              <a href="#" className="text-gray-700 transition hover:opacity-75"> Contact </a>
+              <a href="/contact" className="text-gray-700 transition hover:opacity-75"> Contact </a>
             </li>
 
             <li>
-              <a href="#" className="text-gray-700 transition hover:opacity-75"> FAQs </a>
+              <a href="/faq" className="text-gray-700 transition hover:opacity-75"> FAQs </a>
             </li>
 
             <li>
-              <a href="#" className="text-gray-700 transition hover:opacity-75"> Live Chat </a>
+              <a href="/team" className="text-gray-700 transition hover:opacity-75"> Team </a>
             </li>
           </ul>
         </div>
@@ -203,7 +185,7 @@ const Footer = () => {
       </div>
     </div>
 
-    <p className="text-xs text-gray-500">&copy; 2022. Company Name. All rights reserved.</p>
+    <p className="text-xs text-gray-500">&copy; 2024. BNAS. All rights reserved.</p>
   </div>
 </footer>
    );
