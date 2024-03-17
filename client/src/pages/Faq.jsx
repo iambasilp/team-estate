@@ -21,94 +21,57 @@ export default function FAQ() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
               <div>
                 <h4 className="mb-2 font-semibold">
-                  What features are included?
+                How can I list my property for sale with Bnas Real Estate
                 </h4>
                 <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                  Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                  Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                  nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                Simply contact us through our website or give us a call to get started with listing your property. Our team will guide you through the process seamlessly.
                 </p>
               </div>
               <div>
                 <h4 className="mb-2 font-semibold">
-                  Can I use PayPal to pay you?
+                What types of properties do you offer for rent?
                 </h4>
                 <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                  Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                  Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                  nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                We offer a diverse range of rental properties including apartments, houses, condos, and commercial spaces to meet your specific needs.
                 </p>
               </div>
               <div>
                 <h4 className="mb-2 font-semibold">
-                  Do I get access to the community?
+                Do you provide assistance for finding commercial properties for lease?
                 </h4>
                 <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                  Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                  Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                  nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                Yes, our dedicated team assists in finding commercial properties for lease tailored to your business requirements, ensuring a smooth process.
                 </p>
               </div>
               <div>
                 <h4 className="mb-2 font-semibold">
-                  Can I get a refund just in case?
+                What are your fees for selling a property?
                 </h4>
                 <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                  Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                  Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                  nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                Our fees for selling a property vary depending on the specifics of your listing. Contact us for a personalized quote and detailed information.
                 </p>
               </div>
               <div>
                 <h4 className="mb-2 font-semibold">
-                  Do you offer email support?
+                How do I schedule a viewing for a property I'm interested in?
                 </h4>
                 <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                  Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                  Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                  nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                It's easy! Simply reach out to our team to schedule a viewing at your convenience. We'll coordinate with the property owner to arrange a suitable time.
                 </p>
               </div>
               <div>
                 <h4 className="mb-2 font-semibold">
-                  Are the updates free for life?
+                What is the process for renting a property through Bnas Real Estate?
                 </h4>
                 <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                  Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                  Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                  nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                Our rental process is straightforward. Once you find a property you're interested in, we'll guide you through the application, screening, and lease signing process step by step.
                 </p>
               </div>
             </div>
             {/* END FAQ */}
   
             {/* Link */}
-            <div className="text-center">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center space-x-2 rounded-lg border border-gray-200 bg-white px-4 py-2 font-semibold leading-6 text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700"
-              >
-                <svg
-                  className="hi-mini hi-arrow-top-right-on-square inline-block size-5 opacity-50"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
-                    clipRule="evenodd"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Go to support center</span>
-              </a>
-            </div>
+        
             {/* END Link */}
           </div>
         </div>
