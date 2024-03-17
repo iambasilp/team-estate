@@ -38,7 +38,7 @@ const deleteUser = async (req, res, next) => {
    try {
       // ? check if the user is deleting himself
       if (id === req.user.id) {
-         next(errorHandler(400, "you can't delete yourself"));
+         return next(errorHandler(400, "you can't delete yourself"));
       }
 
       // ? remove user and his listings
