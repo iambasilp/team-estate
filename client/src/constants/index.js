@@ -2,7 +2,17 @@ import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 import linkedin from "../assets/linkedin.svg";
 import twitter from "../assets/twitter.svg";
-import basilPhoto from "../assets/developer/basil.png";
+import Person1 from "../assets/testimonials/person_1.jpg"
+import Person2 from "../assets/testimonials/person_2.jpg"
+import Person3 from "../assets/testimonials/person_3.jpg"
+import Person4 from "../assets/testimonials/person_4.jpg"
+import Person5 from "../assets/testimonials/person_5.jpg"
+import Person6 from "../assets/testimonials/person_6.jpg"
+import Person7 from "../assets/testimonials/person_7.jpg"
+import Person8 from "../assets/testimonials/person_8.jpg"
+import Person9 from "../assets/testimonials/person_9.jpg"
+import Person10 from "../assets/testimonials/person_10.jpg"
+
 
 export const navLinks = [
    {
@@ -130,51 +140,65 @@ export const socialMedia = [
 
 export const testimonialData = [
    {
-      name: "Basil",
-      photo: basilPhoto,
+      name: "Irfan",
+      photo: Person1,
       rating: 4,
       testimonial:
-         "cidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+         "Outstanding service! Bnas Real Estate helped me find the perfect apartment within my budget. The entire process was smooth and stress-free. Highly recommend!",
    },
    {
-      name: "john",
-      photo: basilPhoto,
+      name: "Mizas",
+      photo: Person1,
       rating: 5,
-      testimonial: "tur recusandae ab saepe illo est quia obcaecati neque quibusdam ei",
+      testimonial: "I recently sold my house through Bnas Real Estate, and I couldn't be happier with the outcome. Their team was professional, responsive, and went above and beyond to ensure a successful sale. Thank you!",
    },
    {
-      name: "raj",
-      photo: basilPhoto,
+      name: "Sarafath",
+      photo: Person2,
       rating: 5,
       testimonial:
-         "Lonsectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+         "I've been renting with Bnas Real Estate for over a year now, and I'm extremely satisfied with their services. Any maintenance issues are promptly addressed, and the leasing process was straightforward. Great experience overall!",
    },
    {
-      name: "ameen",
-      photo: basilPhoto,
+      name: "Shibin",
+      photo: Person3,
       rating: 4,
       testimonial:
-         " quibusdam etque voluptates magnam!",
+         "Bnas Real Estate helped me find a prime commercial space for my business. Their attention to detail and understanding of my requirements were impressive. I'm thrilled with the location they secured for me",
    },
    {
-      name: "mubarak",
-      photo: basilPhoto,
+      name: "Nishal",
+      photo: Person4,
       rating: 4,
       testimonial:
-         "Lorem ipspisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+         "Highly impressed with the level of professionalism displayed by Bnas Real Estate. They guided me through every step of the home buying process, ensuring I found the perfect property. ",
    },
    {
-      name: "sinan",
+      name: "Sinan",
       rating: 5,
-      photo: basilPhoto,
+      photo: Person5,
       testimonial:
-         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+         "I've been using Bnas Real Estate for property management, and they have exceeded my expectations. Their team is proactive, communicative",
    },
    {
-      name: "yadhav",
-      photo: basilPhoto,
+      name: "Midhun",
+      photo: Person6,
       rating: 4,
       testimonial:
-         "Loreicing elit. Culpa sit rerum incidunt, a consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus error officiis atque voluptates magnam!",
+         "Excellent customer service! Bnas Real Estate listened to my needs and preferences and found me a rental property that exceeded my expectations. I appreciate their dedication and attention to detail.",
+   },
+   {
+      name: "Karthik",
+      photo: Person7,
+      rating: 3,
+      testimonial:
+         "I had a fantastic experience selling my property with Bnas Real Estate. Their market knowledge and negotiation skills were instrumental in securing a great deal. I couldn't have asked for a better real estate agency",
+   },
+   {
+      name: "Adhil",
+      photo: Person8,
+      rating: 4,
+      testimonial:
+         "Bnas Real Estate helped me find a parking spot in a convenient location near my workplace. The process was quick and hassle-free. I highly recommend their parking solutions.",
    },
 ];
