@@ -148,7 +148,7 @@ export const testimonialData = [
    },
    {
       name: "Mizas",
-      photo: Person1,
+      photo: Person10,
       rating: 5,
       testimonial: "I recently sold my house through Bnas Real Estate, and I couldn't be happier with the outcome. Their team was professional, responsive, and went above and beyond to ensure a successful sale. Thank you!",
    },
@@ -160,7 +160,7 @@ export const testimonialData = [
          "I've been renting with Bnas Real Estate for over a year now, and I'm extremely satisfied with their services. Any maintenance issues are promptly addressed, and the leasing process was straightforward. Great experience overall!",
    },
    {
-      name: "Shibin",
+      name: "Shibina",
       photo: Person3,
       rating: 4,
       testimonial:
