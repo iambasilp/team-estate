@@ -28,7 +28,7 @@ export default function services() {
                      Find your ideal rental property effortlessly with our comprehensive rental services. Whether you're seeking a cozy apartment or a spacious house, we help you navigate the rental market with ease, ensuring you find the perfect home.
                      </p>
                   </div>
-                  <div className="rounded-lg border border-white bg-white p-5 shadow-sm transition hover:border-blue-600 sm:col-span-2 md:p-7 lg:col-span-1 xl:p-10 dark:border-gray-800 dark:bg-gray-800 dark:shadow-none dark:hover:border-blue-400">
+                  <div className="rounded-lg border border-white bg-white p-5 shadow-sm transition hover:border-blue-600 sm:col-span-2 md:p-7 lg:col-span-1 xl:p-10 ">
                   <img src={ServiceParking} alt="sell" className="mb-5 inline-block size-12 text-blue-600" />
                      <h4 className="mb-2 text-lg font-bold">Convenient Parking Solutions</h4>
                      <p className="leading-relaxed text-gray-600">
