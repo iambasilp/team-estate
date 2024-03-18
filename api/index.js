@@ -11,6 +11,7 @@ import adminRouter from "./routes/admin.route.js";
 import connectDB from "./config/connectDB.js";
 import manageErrors from "./middleware/manageErrors.js";
 import { errorHandler } from "./utils/error.js";
+const PORT = process.env.PORT || 3000
 dotenv.config();
 
 // ? Connect to DB
@@ -36,5 +37,5 @@ app.use(manageErrors);
 // ? once connected to DB, start server
 mongoose.connection.once("open", () => {
    console.log("connected to DB");
-   app.listen(3000, () => console.log("Server is running on port 3000!"));
+   app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 });
