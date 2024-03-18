@@ -9,12 +9,12 @@ import AneebDev from "../../assets/developer/aneeb.jpg";
 import AzeemDev from "../../assets/developer/azeem.jpeg";
 export default function About() {
    return (
-      <section className={`bg-white section dark:bg-gray-900 ${styles.paddingY} mt-20 sm:mt-10 `}>
+      <section className={`bg-white section  ${styles.paddingY} mt-20 sm:mt-10 `}>
          <div className="container px-6 py-10 mx-auto">
-            <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+            <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl ">
                Our Executive Team
             </h1>
-            <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
+            <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 ">
             A dynamic group of leaders driven by excellence and innovation in the real estate industry. With expertise spanning diverse areas, they steer our company towards success with vision and integrity.
             </p>
             <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3">
@@ -24,16 +24,16 @@ export default function About() {
                      src={AneebDev}
                      alt=""
                   />
-                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                      Aneeb
                   </h1>
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize  group-hover:text-gray-300">
                      Mentor
                   </p>
                   <div className="flex mt-3 -mx-2">
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                         aria-label="Reddit"
                      >
                         <svg
@@ -47,7 +47,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                         aria-label="Facebook"
                      >
                         <svg
@@ -61,7 +61,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
                         aria-label="Github"
                      >
                         <svg
@@ -81,16 +81,16 @@ export default function About() {
                      src={AzeemDev}
                      alt=""
                   />
-                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                      Azeem
                   </h1>
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize  group-hover:text-gray-300">
                      Advisor
                   </p>
                   <div className="flex mt-3 -mx-2">
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Reddit"
                      >
                         <svg
@@ -104,7 +104,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Facebook"
                      >
                         <svg
@@ -118,7 +118,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Github"
                      >
                         <svg
@@ -138,16 +138,16 @@ export default function About() {
                      src={BasilDev}
                      alt=""
                   />
-                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                      Basil
                   </h1>
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize group-hover:text-gray-300">
                   Design & Flow Director
                   </p>
                   <div className="flex mt-3 -mx-2">
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Reddit"
                      >
                         <svg
@@ -161,7 +161,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Facebook"
                      >
                         <svg
@@ -175,7 +175,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Github"
                      >
                         <svg
@@ -195,16 +195,16 @@ export default function About() {
                      src={NishajDev}
                      alt=""
                   />
-                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                      Nishaj
                   </h1>
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize group-hover:text-gray-300">
                   Backend & API Director
                   </p>
                   <div className="flex mt-3 -mx-2">
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Reddit"
                      >
                         <svg
@@ -218,7 +218,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Facebook"
                      >
                         <svg
@@ -232,7 +232,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Github"
                      >
                         <svg
@@ -253,16 +253,16 @@ export default function About() {
                      src={AnasDev}
                      alt=""
                   />
-                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                      Anas
                   </h1>
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize group-hover:text-gray-300">
                   Feature & Innovation Director
                   </p>
                   <div className="flex mt-3 -mx-2">
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Reddit"
                      >
                         <svg
@@ -276,7 +276,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Facebook"
                      >
                         <svg
@@ -290,7 +290,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Github"
                      >
                         <svg
@@ -310,16 +310,16 @@ export default function About() {
                      src={SuhaibDev}
                      alt=""
                   />
-                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
                      Suhaib
                   </h1>
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+                  <p className="mt-2 text-gray-500 capitalize group-hover:text-gray-300">
                      Quality Assurance (QA) Engineer
                   </p>
                   <div className="flex mt-3 -mx-2">
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Reddit"
                      >
                         <svg
@@ -333,7 +333,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Facebook"
                      >
                         <svg
@@ -347,7 +347,7 @@ export default function About() {
                      </a>
                      <a
                         href="#"
-                        className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+                        className="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
                         aria-label="Github"
                      >
                         <svg
