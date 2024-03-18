@@ -143,7 +143,7 @@ export default function About() {
                      Nishaj
                   </h1>
                   <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                     Full Stack Developer
+                  Backend Developer
                   </p>
                   <div className="flex mt-3 -mx-2">
                      <a
@@ -200,7 +200,7 @@ export default function About() {
                      Basil
                   </h1>
                   <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                  Full Stack Developer
+                  Frontend Developer
                   </p>
                   <div className="flex mt-3 -mx-2">
                      <a
