@@ -15,7 +15,7 @@ export default function About() {
                Our Executive Team
             </h1>
             <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
-            Introducing our Executive Team: a dynamic group of leaders driven by excellence and innovation in the real estate industry. With expertise spanning diverse areas, they steer our company towards success with vision and integrity.
+            A dynamic group of leaders driven by excellence and innovation in the real estate industry. With expertise spanning diverse areas, they steer our company towards success with vision and integrity.
             </p>
             <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3">
                <div className="flex flex-col items-center p-8 transition-colors duration-300 transform cursor-pointer group hover:bg-blue-600 rounded-xl">
