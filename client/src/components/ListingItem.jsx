@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
+import { FaIndianRupeeSign } from "react-icons/fa6";
 
 export default function ListingItem({ listing }) {
    return (
@@ -25,11 +26,14 @@ export default function ListingItem({ listing }) {
                </div>
                <p className="text-sm text-gray-600 line-clamp-2 transition-all duration-300">{listing.description}</p>
                <p className="text-slate-500 mt-2 font-semibold transition-all duration-300">
-                  $
-                  {listing.offer
+                  
+                  
+
+               ₹ {listing.offer
                      ? listing.discountPrice.toLocaleString("en-US")
                      : listing.regularPrice.toLocaleString("en-US")}
                   {listing.type === "rent" && " / month"}
+                  
                </p>
                <div className="text-slate-700 flex gap-4">
                   <div className="font-bold text-xs transition-all duration-300">

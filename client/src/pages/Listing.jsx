@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaIndianRupeeSign } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
