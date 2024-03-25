@@ -27,6 +27,7 @@ export default function Profile() {
    const [updateSuccess, setUpdateSuccess] = useState(false);
    const [showListingsError, setShowListingsError] = useState(false);
    const [userListings, setUserListings] = useState([]);
+   const [showNoListings, setShowNoListings] = useState(false);
    const dispatch = useDispatch();
 
    // firebase storage
@@ -143,6 +144,7 @@ export default function Profile() {
             return;
          }
          if (data.length === 0) {
+            setShowNoListings(true);
             console.log("No listings found");
             return;
          }
@@ -196,124 +198,143 @@ export default function Profile() {
 
    return (
       <div className="mt-24 max-w-lg mx-auto">
-         <h1 className="text-3xl font-semibold my-7 text-center">Profile</h1>
-         <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-            <input onChange={(e) => setFile(e.target.files[0])} type="file" ref={fileRef} hidden accept="image/*" />
-            <img
-               src={formData.avatar || currentUser.avatar}
-               alt="profile"
-               className="rounded-full h-24 w-24 object-cover self-center mt-2"
-            />
-            <div hidden={isDisabled} className="self-center ">
-               <button
-                  type="button"
-                  onClick={() => fileRef.current.click()}
-                  className="bg-blue-700 text-white p-3 m-2 rounded-lg uppercase text-center hover:opacity-95"
-               >
-                  <FaUpload />
-               </button>
-               <button
-                  type="button"
-                  onClick={handleRemoveProfilePhoto}
-                  className="bg-gray-500 text-white p-3 m-2 rounded-lg uppercase text-center hover:opacity-95"
-               >
-                  <FaTrashAlt />
-               </button>
-            </div>
-            <p className="text-sm self-center">
-               {fileUploadError ? (
-                  <span className="text-red-700">Error Image upload (image must be less than 2 mb)</span>
-               ) : filePerc > 0 && filePerc < 100 ? (
-                  <span className="text-slate-700">{`Uploading ${filePerc}%`}</span>
-               ) : filePerc === 100 ? (
-                  <span className="text-green-700">Image successfully uploaded!</span>
-               ) : (
-                  ""
-               )}
-            </p>
-            <p className="pt-4 font-semibold text-gray-700">USER NAME</p>
-            <input
-               disabled={isDisabled}
-               type="text"
-               placeholder="username"
-               defaultValue={currentUser.username}
-               id="username"
-               className="border p-3 rounded-lg"
-               onChange={handleChange}
-            />
-            <p className="pt-4 font-semibold text-gray-700">EMAIL</p>
-            <input
-               disabled={isDisabled}
-               type="email"
-               placeholder="email"
-               id="email"
-               defaultValue={currentUser.email}
-               className="border p-3 rounded-lg"
-               onChange={handleChange}
-            />
-            <p hidden={isDisabled} className="pt-4 font-semibold text-gray-700">
-               PASSWORD
-            </p>
-            <input
-               hidden={isDisabled}
-               type="password"
-               placeholder="password"
-               onChange={handleChange}
-               id="password"
-               className="border p-3 rounded-lg"
-            />
-            <button
-               hidden={isDisabled}
-               disabled={loading}
-               className="bg-blue-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
-            >
-               {loading ? "Loading..." : "UPDATE"}
-            </button>
-            <Link
-               className="bg-slate-700 text-white p-3 mt-5 rounded-lg uppercase text-center hover:opacity-95"
-               to={"/create-listing"}
-            >
-               CREATE LISTING
-            </Link>
-            <div className="flex justify-between gap-2 pt-3">
-               <div className="flex flex-col gap-2">
-                  <div
-                     onClick={handleDisable}
-                     className="w-40 flex items-center gap-2 self-start hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
-                  >
-                     <p>Edit</p>
-                     <FaEdit />
+         <div className="bg-slate-100 px-5 py-3 rounded-xl">
+            <h1 className="text-3xl font-semibold my-7 text-center">Profile</h1>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+               <input onChange={(e) => setFile(e.target.files[0])} type="file" ref={fileRef} hidden accept="image/*" />
+               <div className="flex justify-between">
+                  <div className="flex flex-col">
+                     <img
+                        src={formData.avatar || currentUser.avatar}
+                        alt="profile"
+                        className="rounded-full h-24 w-24 object-cover self-center mt-2"
+                     />
+                     <div hidden={isDisabled} className="self-center ">
+                        <button
+                           type="button"
+                           onClick={() => fileRef.current.click()}
+                           className="bg-blue-700 text-white p-3 m-2 rounded-lg uppercase text-center hover:opacity-95"
+                        >
+                           <FaUpload />
+                        </button>
+                        <button
+                           type="button"
+                           onClick={handleRemoveProfilePhoto}
+                           className="bg-gray-500 text-white p-3 m-2 rounded-lg uppercase text-center hover:opacity-95"
+                        >
+                           <FaTrashAlt />
+                        </button>
+                     </div>
                   </div>
-                  <div
-                     onClick={handleShowListings}
-                     className="w-40 flex items-center gap-2 self-start hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
-                  >
-                     <p>Show Listings</p>
-                     <FaEye />
+                  <div className="flex flex-col gap-2 self-center ">
+                     <div
+                        onClick={handleDisable}
+                        className="w-40 flex items-center gap-2 self-start hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
+                     >
+                        <p>Edit Profile</p>
+                        <FaEdit />
+                     </div>
+                     <div
+                        onClick={handleShowListings}
+                        className="w-40 flex items-center gap-2 self-start hover:cursor-pointer bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
+                     >
+                        <p>Show Listings</p>
+                        <FaEye />
+                     </div>
+                     <Link
+                        className="p-3 uppercase text-center bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white px-4 border border-blue-500 hover:border-transparent rounded"
+                        to={"/create-listing"}
+                     >
+                        CREATE LISTING
+                     </Link>
                   </div>
                </div>
-               <div className="flex flex-col gap-2">
+
+               <p className="text-sm self-center">
+                  {fileUploadError ? (
+                     <span className="text-red-700">Error Image upload (image must be less than 2 mb)</span>
+                  ) : filePerc > 0 && filePerc < 100 ? (
+                     <span className="text-slate-700">{`Uploading ${filePerc}%`}</span>
+                  ) : filePerc === 100 ? (
+                     <span className="text-green-700">Image successfully uploaded!</span>
+                  ) : (
+                     ""
+                  )}
+               </p>
+               <p className="pt-4 font-semibold text-gray-700">USER NAME</p>
+               <input
+                  disabled={isDisabled}
+                  type="text"
+                  placeholder="username"
+                  defaultValue={currentUser.username}
+                  id="username"
+                  className="border p-3 rounded-lg"
+                  onChange={handleChange}
+               />
+               <p className="pt-4 font-semibold text-gray-700">EMAIL</p>
+               <input
+                  disabled={isDisabled}
+                  type="email"
+                  placeholder="email"
+                  id="email"
+                  defaultValue={currentUser.email}
+                  className="border p-3 rounded-lg"
+                  onChange={handleChange}
+               />
+               <p hidden={isDisabled} className="pt-4 font-semibold text-gray-700">
+                  PASSWORD
+               </p>
+               <input
+                  hidden={isDisabled}
+                  type="password"
+                  placeholder="password"
+                  onChange={handleChange}
+                  id="password"
+                  className="border p-3 rounded-lg"
+               />
+               <button
+                  hidden={isDisabled}
+                  disabled={loading}
+                  className="bg-blue-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+               >
+                  {loading ? "Loading..." : "UPDATE"}
+               </button>
+
+               <div className="flex  justify-between gap-2 mt-10">
                   <div
                      onClick={handleSignoutConfirmation}
-                     className="w-44 flex items-center gap-2  self-end hover:cursor-pointer bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white px-4 border border-orange-500 hover:border-transparent rounded"
+                     className="flex items-center gap-2  self-end hover:cursor-pointer bg-transparent hover:bg-orange-500 text-orange-500 font-semibold hover:text-white px-4 border border-orange-500 hover:border-transparent rounded"
                   >
                      <p>Sign out</p>
                      <FaSignOutAlt />
                   </div>
                   <div
                      onClick={handleDeleteUserConfirmation}
-                     className="w-44 flex items-center gap-2  self-end hover:cursor-pointer bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white px-4 border border-red-500 hover:border-transparent rounded"
+                     className="flex items-center gap-2  self-end hover:cursor-pointer bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white px-4 border border-red-500 hover:border-transparent rounded"
                   >
                      <p>Delete account</p>
                      <FaTrash />
                   </div>
                </div>
-            </div>
-         </form>
+            </form>
+         </div>
 
          <p className="text-red-700 mt-5">{error ? error : ""}</p>
          <p className="text-green-700 mt-5">{updateSuccess ? "User is updated successfully!" : ""}</p>
          <p className="text-red-700 mt-5">{showListingsError ? "Error showing listings" : ""}</p>
+         {showNoListings ? (
+            <div className="flex items-center">
+               <p>No listings found,</p>
+               <Link
+                  className="p-3 text-center underline font-semibold text-blue-700"
+                  to={"/create-listing"}
+               >
+                  Create Listing?
+               </Link>
+            </div>
+         ) : (
+            ""
+         )}
 
          {userListings && userListings.length > 0 && (
             <div className="flex flex-col gap-4">
